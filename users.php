@@ -17,9 +17,9 @@
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="#" class="brand">
+		<a href="dashboard.php" class="brand">
 			<i class='bx bxs-smile'></i>
-			<span class="text">FELUX</span>
+			<span class="text text2">FELUX</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
@@ -60,13 +60,13 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="add_new_admin.php">
 					<i class='bx bxs-cog' ></i>
-					<span class="text">Profile</span>
+					<span class="text">Add New Admin</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="update_profile.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Edit Profile</span>
 				</a>
