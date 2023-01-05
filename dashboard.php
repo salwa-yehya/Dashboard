@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- font awesome cdn link  -->
+     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
@@ -24,8 +24,8 @@
 		<ul class="side-menu top">
 			<li class="active">
 				<a href="dashboard.php">
-					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Dashboard</span>
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Orders</span>
 				</a>
 			</li>
 			<li>
@@ -40,7 +40,7 @@
 					<span class="text">Product</span>
 				</a>
 			</li>
-            
+			
 			<li>
 				<a href="add_category.php">
 					<i class='bx bxs-cog' ></i>
@@ -54,7 +54,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+			<a href="users.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Users</span>
 				</a>
@@ -88,17 +88,71 @@
 
 	<!-- CONTENT -->
 	<section id="content">
-	
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<!-- <input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label> -->
+			
+		</nav>
+		<!-- NAVBAR -->
 
 		<!-- MAIN -->
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Dashboard</h1>
+					<h1>Orders</h1>
 				</div>
 				
 			</div>
-			</div>
+<!-- ______________________________ -->
+
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<!-- <h3>Product</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i> -->
+					</div>
+					<table>
+					<thead>
+					<tr>
+					<th >Name</th>	
+					<th >Number</th>
+					<th >Email</th>
+					<th >Total Products</th>
+					<th >Total Price</th>
+					<th >Order_Time</th>
+					<th >Location</th>
+					</tr>
+				</thead>
+						<tbody>
+							<tr>
+								<td><p>Salwa</p></td>
+								<td><p>0771231233</p></td>
+								<td><p>salwa@gmail.com</p></td>
+								<td>3</td>
+								<td>70jd</td>
+								<td>29-6</td>
+								<td>Aqaba</td>
+								
+							</tr>
+							<tr>
+								<td><p>Salwa</p></td>
+								<td><p>0771231233</p></td>
+								<td><p>salwa@gmail.com</p></td>
+								<td>3</td>
+								<td>70jd</td>
+								<td>29-6</td>
+								<td>Aqaba</td>
+								
+							</tr>
+						</tbody>
+					</table>
+	<!-- ______________________________ -->
+				</div>
+			
 			</div>
 		</main>
 		<!-- MAIN -->

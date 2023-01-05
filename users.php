@@ -24,8 +24,8 @@
 		<ul class="side-menu top">
 			<li class="active">
 				<a href="dashboard.php">
-				<i class='bx bxs-cog' ></i>
-				<span class="text">Orders</span>
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Orders</span>
 				</a>
 			</li>
 			<li>
@@ -40,7 +40,7 @@
 					<span class="text">Product</span>
 				</a>
 			</li>
-            
+			
 			<li>
 				<a href="add_category.php">
 					<i class='bx bxs-cog' ></i>
@@ -54,7 +54,7 @@
 				</a>
 			</li>
 			<li>
-			<a href="users.php">
+				<a href="users.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Users</span>
 				</a>
@@ -101,33 +101,49 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Add Category</h1>
-				</div>	
+					<h1>Users</h1>
+				</div>
+				
 			</div>
 <!-- ______________________________ -->
-<section class="add-products">
 
-   <!-- <h1 class="heading">Add product</h1> -->
 
-   <form action="" method="post" enctype="multipart/form-data">
-      <div class="flex">
-         <div class="inputBox">
-            <span>Category name </span>
-            <input type="text" class="box" required maxlength="100" placeholder="enter product name" name="name">
-         </div>
-         
-        <div class="inputBox">
-            <span>Category image </span>
-            <input type="file" name="image_01" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
-        </div>
-      </div>
-      
-      <input type="submit" value="Add category" class="add-btn" name="add_category">
-   </form>
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<!-- <h3>Product</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i> -->
+					</div>
+					<table>
+					<thead>
+					<tr>
+                    <th >User id</th>   
+					<th >User Name</th>	
+					<th >Email</th>
+					<th>Delete</th>
+					</tr>
+				</thead>
+						<tbody>
+							<tr>
+								<td><p>7</p></td>
+								<td><p>Salwa</p></td>
+								<td><p>salwa@gmail.com</p></td>
+                                <td><i class="fa-solid fa-trash"></i></td>
 
-</section>
+								
+							</tr>
+							<tr>
+								<td><p>7</p></td>
+								<td><p>Salwa</p></td>
+								<td><p>salwa@gmail.com</p></td>
+                                <td><i class="fa-solid fa-trash"></i></td>
 
-<!-- ______________________________ -->
+								
+							</tr>
+						</tbody>
+					</table>
+	<!-- ______________________________ -->
 				</div>
 			
 			</div>
