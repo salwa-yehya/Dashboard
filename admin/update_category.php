@@ -176,7 +176,7 @@ if(isset($_POST['update'])){
 	  </div>
 
       <!-- <div class="flex-btn"> -->
-	  
+	  <div class="inputBox">
       <input type="submit" name="update" class="add-btn" value="update">
 	  </div>
 	  <!-- </div> -->
