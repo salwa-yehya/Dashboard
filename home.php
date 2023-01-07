@@ -62,38 +62,13 @@ if (isset($_SESSION['user_id'])) {
             <div class="swiper-wrapper">
 
                <div class="swiper-slide slide">
-                  <!-- <div class="image">
-                    
-                     <img src="images/homebrack.png" alt="">
-                  </div> -->
+
                   <div class="content">
                      <h3>Welcome to Your FeLux</h3>
                      <span>Choose your favorite jewelry</span><br>
                      <a href="shop.php" class="btn" style="background-color:#e0b473; color:black;">shop now</a>
                   </div>
                </div>
-
-               <!-- <div class="swiper-slide slide">
-                  <div class="image">
-                     <img src="images/homear.png" alt="">
-                  </div>
-                  <div class="content">
-                     <span>upto 50% off</span>
-                     <h3>latest Ring</h3>
-                     <a href="shop.php" class="btn" style="background-color:#e0b473; color:black;">shop now</a>
-                  </div>
-               </div>
-
-               <div class="swiper-slide slide">
-                  <div class="image">
-                     <img src="images/homeneck.png" alt="">
-                  </div>
-                  <div class="content">
-                     <span>upto 50% off</span>
-                     <h3>latest Necklace</h3>
-                     <a href="shop.php" class="btn" style="background-color:#e0b473; color:black;">shop now</a>
-                  </div>
-               </div> -->
 
             </div>
 
@@ -203,6 +178,91 @@ if (isset($_SESSION['user_id'])) {
    </section>
 
 
+   <div class="home2-bg">
+
+<section class="home2">
+
+   <div class="swiper home2-slider">
+   
+   <div class="swiper-wrapper">
+
+      <div class="swiper-slide slide">
+         <div class="image">
+            <img src="images/brand1-removebg-preview.png" alt="" width="50" height="50">
+         </div>
+         <!-- <div class="content">
+            <span>upto 50% off</span>
+            <h3>latest Bracelet</h3> 
+            <a href="shop.php" class="btn"  >shop now</a>
+         </div> -->
+      </div>
+
+      <div class="swiper-slide slide">
+         <div class="image">
+            <img src="images/brand3-removebg-preview.png"  alt="" width="50" height="50">
+         </div>
+         <!-- <div class="content">
+            <span>upto 50% off</span>
+            <h3>latest Ring</h3>
+            <a href="shop.php" class="btn">shop now</a>
+         </div> -->
+      </div>
+
+      <div class="swiper-slide slide">
+         <div class="image">
+            <img src="images/brand4-removebg-preview.png"   alt="" width="50" height="50">
+         </div>
+         <!-- <div class="content">
+            <span>upto 50% off</span>
+            <h3>latest Necklace</h3>
+            <a href="shop.php" class="btn">shop now</a>
+         </div> -->
+      </div>
+
+      <div class="swiper-slide slide">
+         <div class="image">
+            <img src="images/brand5-removebg-preview.png"   alt="" width="50" height="50">
+         </div>
+         <!-- <div class="content">
+            <span>upto 50% off</span>
+            <h3>latest Necklace</h3>
+            <a href="shop.php" class="btn">shop now</a>
+         </div> -->
+      </div>
+
+      <div class="swiper-slide slide">
+         <div class="image">
+            <img src="images/brand6-removebg-preview.png"   alt="" width="50" height="50">
+         </div>
+         <!-- <div class="content">
+            <span>upto 50% off</span>
+            <h3>latest Necklace</h3>
+            <a href="shop.php" class="btn">shop now</a>
+         </div> -->
+      </div>
+
+      <div class="swiper-slide slide">
+         <div class="image">
+            <img src="images/brand7-removebg-preview.png"   alt="" width="50" height="50">
+         </div>
+         <!-- <div class="content">
+            <span>upto 50% off</span>
+            <h3>latest Necklace</h3>
+            <a href="shop.php" class="btn">shop now</a>
+         </div> -->
+      </div>
+      
+   </div>
+
+      <div class="swiper-pagination1"></div>
+
+   </div>
+
+</section>
+
+</div>
+
+
 
 
 
@@ -215,14 +275,34 @@ if (isset($_SESSION['user_id'])) {
    <script src="js/script.js"></script>
 
    <script>
-      var swiper = new Swiper(".home-slider", {
-         loop: true,
-         spaceBetween: 20,
-         pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-         },
-      });
+   var swiper = new Swiper(".home2-slider", {
+   loop:true,
+   centeredSlides: true,
+   autoplay: {
+     delay: 3000,
+     disableOnInteraction: false,
+   },
+   breakpoints: {
+     0: {
+       slidesPerView: 1,
+     },
+     550: {
+     slidesPerView: 2,
+            },
+                     768: {
+               slidesPerView: 3,
+            },
+            // 1024: {
+            //    slidesPerView: 4,
+            // },
+     
+     
+   },
+   pagination: {
+            el: ".swiper-pagination1",
+            clickable:true,
+          },
+ });
 
       var swiper = new Swiper(".products-slider", {
          loop: true,
