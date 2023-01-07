@@ -33,21 +33,75 @@ if(isset($_SESSION['user_id'])){
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
+   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="../css/style.css">
+   <link rel="stylesheet" href="css/style.css">
    
 </head>
 
 <body>
    
-<?php include 'components/user_header.php'; ?>
-<section class="category1">
 
-   <div class="zeena">
-      <h1 class="heading">SHOP BY CATEGORY</h1>
-      <img src="images/zeena1.png" alt="" width="30%">
+<?php include 'components/user_header.php'; ?>
+
+
+
+<div class="home1-bg">
+
+<section class="home1">
+
+   <div class="swiper home1-slider">
+   
+   <div class="swiper-wrapper">
+
+      <div class="swiper-slide slide">
+         <div class="image">
+            <!-- <img src="images/homeneck.png" alt=""> -->
+            <!-- <img src="images/homeear.png" alt=""> -->
+            <img src="images/homebrack.png" alt="">
+         </div>
+         <div class="content">
+            <span>upto 50% off</span>
+            <!-- edit text -->
+            <h3>latest Bracelet</h3> 
+            <a href="shop.php" class="btn"  >shop now</a>
+         </div>
+      </div>
+
+      <div class="swiper-slide slide">
+         <div class="image">
+            <img src="images/homear.png" alt="">
+         </div>
+         <div class="content">
+            <span>upto 50% off</span>
+            <h3>latest Ring</h3>
+            <a href="shop.php" class="btn">shop now</a>
+         </div>
+      </div>
+
+      <div class="swiper-slide slide">
+         <div class="image">
+            <img src="images/homeneck.png"  alt="">
+         </div>
+         <div class="content">
+            <span>upto 50% off</span>
+            <h3>latest Necklace</h3>
+            <a href="shop.php" class="btn">shop now</a>
+         </div>
+      </div>
+      
    </div>
 
+      <div class="swiper-pagination1"></div>
+
+   </div>
+
+</section>
+
+</div>
+<section class="category1">
 
    <div class="header-shop">
       <a href="shop.php"><h3 >PRODUCTS</h3></a>
@@ -69,11 +123,7 @@ if(isset($_SESSION['user_id'])){
    </div>
    </section>
 <section class="products">
-
-   <div class="zeena latest">
-      <h1 class="heading">Products</h1>
-      <img src="images/zeena1.png" alt="" width="30%">
-   </div>
+   
    <div class="box-container">
 
    <?php
@@ -150,7 +200,23 @@ window.onscroll = function(){
 
 <?php include 'components/footer.php'; ?>
 
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+
 <script src="js/script.js"></script>
+<!-- <script>
+  var swiper = new Swiper(".home1-slider", {
+   loop:true,
+   spaceBetween: 20,
+   pagination: {
+      el: ".swiper-pagination1",
+      clickable:true,
+    },
+});
+
+</script> -->
+
+
 
 </body>
 </html>

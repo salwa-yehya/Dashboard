@@ -41,7 +41,7 @@ if (isset($_SESSION['user_id'])) {
 
    <!-- custom css file link  -->
    <script src="https://kit.fontawesome.com/98bf175dbe.js" crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="../css/homnav.css">
+   <link rel="stylesheet" href="css/homnav.css">
 
 </head>
 
