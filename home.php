@@ -104,7 +104,9 @@ if (isset($_SESSION['user_id'])) {
       </section>
 
    </div>
-
+<div>
+   
+</div>
 
    <section class="category1">
 
