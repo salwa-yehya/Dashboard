@@ -25,3 +25,23 @@ subImages.forEach(images =>{
       mainImage.src = src;
    }
 });
+
+
+
+var swiper = new Swiper(".home1-slider", {
+   loop:true,
+   centeredSlides: true,
+   autoplay: {
+     delay: 3000,
+     disableOnInteraction: false,
+   },
+   breakpoints: {
+     0: {
+       slidesPerView: 1,
+     }
+   },
+   pagination: {
+            el: ".swiper-pagination1",
+            clickable:true,
+          },
+ });
