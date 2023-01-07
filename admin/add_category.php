@@ -155,7 +155,18 @@ if(isset($_POST['add_category'])){
 <section class="add-products">
 
    <!-- <h1 class="heading">Add product</h1> -->
-
+   <?php
+   if(isset($message)){
+      foreach($message as $message){
+         echo '
+         <div class="messages">
+            <span>'.$message.'</span>
+			<i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+         </div>
+         ';
+      }
+   }
+?>
    <form action="" method="post" enctype="multipart/form-data">
       <div class="flex">
          <div class="inputBox">
@@ -171,17 +182,7 @@ if(isset($_POST['add_category'])){
       
       <input type="submit" value="Add category" class="add-btn" name="add_category">
    </form>
-   <?php
-   if(isset($message)){
-      foreach($message as $message){
-         echo '
-         <div >
-            <span>'.$message.'</span>
-         </div>
-         ';
-      }
-   }
-?>
+
 </section>
 
 <!-- ______________________________ -->

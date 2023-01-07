@@ -336,6 +336,79 @@ section{
    width: auto;
 }
 
+
+
+
+
+.home1-bg{
+   background:url(../images/bggold11.png) no-repeat; /* edit */
+   background-size: cover;
+   background-position: center;
+   min-width: 100%;
+}
+
+.home1-bg .home1 .slide{
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap:1.5rem;
+   padding-bottom: 6rem;
+   padding-top: 2rem;
+   user-select: none;
+}
+
+.home1-bg .home1 .slide .image{
+   flex:1 1 40rem;
+}
+
+.home1-bg .home1 .slide .image img{
+   height: 40rem;
+   width: 100%;
+   object-fit: contain;
+}
+
+.home1-bg .home1 .slide .content{
+   flex:1 1 40rem;
+}
+
+.home1-bg .home1 .slide .content .btn{
+   border: 2px solid;
+   border-image: LINEAR-GRADIENT(TO RIGHT, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)2;
+   background: LINEAR-GRADIENT(TO RIGHT, #BF953F, #FCF6BA, #cea03c, #FBF5B7, #AA771C);
+   display: inline-block;
+   width: auto;
+   color: var(--black);
+}
+
+.home1-bg .home1 .slide .content span{
+   font-size: 2rem;
+   color:var(--white);
+}
+
+.home1-bg .home1 .slide .content h3{
+   margin-top: 1rem;
+   font-size: 4rem;
+   color:var(--white);
+   text-transform: uppercase;
+}
+
+/* .home1-bg .home1 .slide .content .btn{
+   display: inline-block;
+   width: auto;
+   background:LINEAR-GRADIENT( to left,#1A191E,#25242b,#393842,#1A191E, #2b2931,#393842, #1A191E,#27262e,#1A191E);
+} */
+
+.swiper-pagination-bullets {
+   bottom: 10px;
+   left: 0;
+   width: 100%;
+   text-align: -webkit-center;
+}
+
+.swiper-pagination-bullet-active{
+   background-color: var(--main-color);
+}
+
 .category1 {
    margin-top: 2rem;
    margin-bottom: 10rem;
@@ -590,7 +663,7 @@ section{
 }
 
 .header-shop{
-   margin: auto auto;
+   margin: 1rem auto;
    width: 100%;
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
@@ -607,7 +680,11 @@ section{
    margin: auto auto;
    color: var(--white);
    font-size: 17px;
-   background-color: var(--main-color);
+   /* background-color: var(--main-color); */
+   background:LINEAR-GRADIENT( to left,#1A191E,#25242b,#393842,#1A191E, #2b2931,#393842, #1A191E,#27262e,#1A191E);
+   border: 2px solid;
+   border-image: LINEAR-GRADIENT(TO RIGHT, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)2;
+   text-align:center;
    padding-top: 1.5rem  ;
    transform: scale(1.2);
    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
@@ -615,12 +692,10 @@ section{
 
 .header-shop a:hover {
    background-color:var(--white);
-   color:var(--black);
+   color:var(--main-color);
    transform: scale(1.1);
    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 } 
-
-
 
 .products .box-container .box{
    position: relative;
