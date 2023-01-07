@@ -155,6 +155,18 @@ if(isset($_POST['submit'])){
 				</div>	
 			</div>
 <!-- ______________________________ -->
+<?php
+   if(isset($message)){
+      foreach($message as $message){
+         echo '
+         <div class="messages">
+            <span>'.$message.'</span>
+			<i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+         </div>
+         ';
+      }
+   }
+?>
 <section class="add-products">
    <form action="" method="post" enctype="multipart/form-data">
       <div class="flex">
@@ -187,18 +199,7 @@ if(isset($_POST['submit'])){
    </form>
 
 </section> 
-<?php
-   if(isset($message)){
-      foreach($message as $message){
-         echo '
-         <div >
-            <span>'.$message.'</span>
-            <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-         </div>
-         ';
-      }
-   }
-?>
+
 <!-- ______________________________ -->
 				</div>
 			

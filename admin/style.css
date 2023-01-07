@@ -416,7 +416,23 @@ body {
 	margin-top: 36px; 
 	
  }
+ form{
+	max-width: 50rem;
+	width: 100%;
+	margin: 0 auto;   
+	background-color: #F9F9F9;
+	box-shadow: #F9F9F9;
+	border-radius: .5rem;
+	padding:3rem;
+	margin-top: 36px; 
+	
+ }
  .add-products form .flex{
+	display: flex;
+	gap:1rem;
+	flex-wrap: wrap;
+ }
+ form .flex{
 	display: flex;
 	gap:1rem;
 	flex-wrap: wrap;
@@ -424,8 +440,15 @@ body {
  .add-products form .flex .inputBox{
 	flex:1 1 25rem;
  } 
- 
+ .flex .inputBox{
+	flex:1 1 25rem;
+ }
+
  .add-products form span{
+	font-size:1rem;
+	color:var(#F9F9F9);
+ }
+ form span{
 	font-size:1rem;
 	color:var(#F9F9F9);
  }
@@ -436,8 +459,18 @@ body {
 	width: 100%;
 	margin-top: 1.5rem;
  }
-
+ form .box{
+	font-size: 1rem;
+	border-radius: .5rem;
+	padding:1.4rem;
+	width: 100%;
+	margin-top: 1.5rem;
+ }
  .add-products form textarea{
+	height: 3rem;
+	resize: none;
+ }
+ form textarea{
 	height: 3rem;
 	resize: none;
  }
@@ -573,9 +606,26 @@ body {
 
 
 
+.messages{
+	text-align: center;
+    border: 1px solid black;
+	border-radius: 10px;
+	background-color: #fff;
+	width: 30%;
+	height: 50px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-
-
+.Cimg{
+	width: 200px;
+	padding-left: 30px;
+}
+.back{
+	color: #0C0C1E;
+}
 
 
 
@@ -593,8 +643,6 @@ body {
 		display: none;
 	}
 }
-
-
 
 
 
