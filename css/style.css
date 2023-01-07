@@ -74,7 +74,7 @@ section{
 
 .heading{
    font-size: 5rem;
-   color:var(--main-color);
+   color:black;
    margin-bottom: 2rem;
    text-align: center;
    /* text-transform: uppercase; */
@@ -380,11 +380,15 @@ section{
    color: var(--black);
 }
 
-.home1-bg .home1 .slide .content span{
-   font-size: 2rem;
+.home1-bg .home1 .slide .content .span{
+   font-size: 3rem;
    color:var(--white);
 }
-
+  .sale {
+   font-size: 2rem;
+   color:red;
+   display: block;
+}
 .home1-bg .home1 .slide .content h3{
    margin-top: 1rem;
    font-size: 4rem;

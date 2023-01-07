@@ -80,11 +80,11 @@ if(isset($_POST['update_qty'])){
          
          if ($fetch_product['is_sale'] == 1){ ?>
 
-         <div class="price"><span style="display: flex; flex-direction: row;"><del style="text-decoration:line-through; color:silver"><?= $fetch_product['price']; ?>JD</del><ins style="color:green;"> <?=$fetch_product['price_discount'];?>JD</ins> </span></div>
+         <div class="price"><span style="display: flex; flex-direction: row;"><del style="text-decoration:line-through; color:silver"><?= $fetch_product['price']; ?>JD</del><ins style="color:red;"> <?=$fetch_product['price_discount'];?>JD</ins> </span></div>
 
          <?php } else { ?>
 
-         <div class="name" style="color:green; padding:20px 0px"><?= $fetch_product['price']; ?></div> <?php } ?>
+         <div class="name" style="color:red; padding:20px 0px"><?= $fetch_product['price']; ?></div> <?php } ?>
 
          <?php if ($fetch_product['category_id'] != '1'){?>
 
