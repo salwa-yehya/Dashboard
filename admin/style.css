@@ -620,10 +620,12 @@ body {
 }
 
 .Cimg{
-	width: 120px;
+	width: 200px;
 	padding-left: 30px;
 }
-
+.back{
+	color: #0C0C1E;
+}
 
 
 

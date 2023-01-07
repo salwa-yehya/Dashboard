@@ -204,10 +204,12 @@ if(isset($_POST['update'])){
                      } } else { echo 'There is no category. Please create one first.';} 
             ?>    
       </select>
-      <div class="flex-btn">
-         <input type="submit" name="update" class="btn" value="update">
-         <a href="product.php" class="option-btn">go back</a>
+      <div class="inputBox">
+         <input type="submit" name="update" class="add-btn" value="update">
       </div>
+      <br>
+      <a href="category.php" class="back"><i class="fa-solid fa-arrow-left"></i> go back</a>
+
    </form>
    
    <?php

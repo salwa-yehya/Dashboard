@@ -176,14 +176,14 @@ if(isset($_POST['update'])){
 	  </div>
 
       <!-- <div class="flex-btn"> -->
-	  <div class="inputBox">
+	  
       <input type="submit" name="update" class="add-btn" value="update">
 	  </div>
 	  <!-- </div> -->
       
  </div> 
  <br>
- <a href="category.php" style">go back</a>
+ <a href="category.php" class="back"><i class="fa-solid fa-arrow-left"></i> go back</a>
 </form>
         
 
