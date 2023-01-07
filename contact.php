@@ -35,7 +35,7 @@ if(isset($_SESSION['user_id'])){
    
 <?php include 'components/user_header.php'; ?>
 <section>
-<h2 class="title">Get In Touch</h2>
+<h2 class="heading">Get In Touch</h2>
 <br>
 <img class="cimg" src="images/contactimg.png" alt="">
 </section>

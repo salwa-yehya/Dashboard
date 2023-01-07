@@ -65,7 +65,7 @@ if (isset($_SESSION['user_id'])) {
 
                   <div class="content">
                      <h3>Welcome to Your FeLux</h3>
-                     <span>Choose your favorite jewelry</span><br>
+                     <span>Choose Your Favorite Jewellery</span><br>
                      <a href="shop.php" class="btn" style="background-color:#e0b473; color:black;">shop now</a>
                   </div>
                </div>
@@ -112,7 +112,11 @@ if (isset($_SESSION['user_id'])) {
    </section>
 
    <div class="static">
+    <section>
+      <span class="sta">Up to</span><span class="sta1">40% OFF</span><span class="sta">& FREE SHIPPING </span><br>
+      <span class="sta2"><a href="shop.php"  style=" color:#fff;">shop now </a><i class="fa-solid fa-angle-right sta3"></i></span>
 
+    </section>
    </div>
 
    <section class="home-products">

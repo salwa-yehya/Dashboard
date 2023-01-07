@@ -64,7 +64,7 @@ section{
 
 .heading{
    font-size: 5rem;
-   color:var(--main-color);
+   /* color:var(--main-color); */
    margin-bottom: 2rem;
    text-align: center;
    /* text-transform: uppercase; */
@@ -343,7 +343,7 @@ section{
    display: block;
    margin-bottom: 6rem;
 }
-
+ 
 .home-bg .home .slide .content h3{
    margin-top: 1rem;
    font-size: 8rem;
@@ -433,7 +433,7 @@ section{
 
 .category1 h1{
    text-align: center;
-   color: var(--main-color);
+   /* color: var(--main-color); */
    margin-top: 2rem;
    padding: 2rem;
    font-size: 5rem;
@@ -496,11 +496,38 @@ section{
    background-image: url(../images/bgsection.png);
    background-size: cover;
    background-attachment: fixed;
-   height: 70vh;
+   height: 60vh;
+   flex-direction: column;
+   justify-content: center;
+   
 }
-
-
-
+ .static .sta {
+   font-size: 5rem;
+   color:var(--white);
+   display: block;
+  
+   
+}
+.static .sta1 {
+   font-size: 9rem;
+   color:var(--red);
+   display: block;
+ 
+}
+.static .sta2 {
+   font-size: 3rem;
+   color:var(--white);
+   text-align: center;
+   
+   
+}
+.static .sta3 {
+   font-size: 2.5rem;
+   color:var(--white);
+   text-align: center;
+   
+   
+}
 .home-products .slide{
    position: relative;
    padding:2rem;
@@ -1123,6 +1150,7 @@ section{
    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
    gap:1.5rem;
    align-items: flex-start;
+   justify-items: center;
 }
 
 .footer .grid .box h3{

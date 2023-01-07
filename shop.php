@@ -63,10 +63,12 @@ if(isset($_SESSION['user_id'])){
             <img src="images/homebrack.png" alt="">
          </div>
          <div class="content">
-            <span>upto 50% off</span>
+            <!-- <span>FeLux</span> -->
             <!-- edit text -->
-            <h3>latest Bracelet</h3> 
-            <a href="shop.php" class="btn"  >shop now</a>
+            <span class="sale">upto 40% off</span>
+<br><br>
+            <span class="span">Express yourself with our accessories range.</span> <br><br>
+            <!-- <a href="shop.php" class="btn"  >shop now</a> -->
          </div>
       </div>
 
@@ -75,9 +77,11 @@ if(isset($_SESSION['user_id'])){
             <img src="images/homear.png" alt="">
          </div>
          <div class="content">
-            <span>upto 50% off</span>
-            <h3>latest Ring</h3>
-            <a href="shop.php" class="btn">shop now</a>
+             <span class="sale">upto 40% off</span><br><br>
+            <span class="span">Expect necklaces, earrings, rings, and everything in-between with crystal designs that make a unique statement, day or night.</span><br><br>
+            
+            <!-- <h3>latest Ring</h3>  -->
+            <!-- <a href="shop.php" class="btn">shop now</a> -->
          </div>
       </div>
 
@@ -86,9 +90,10 @@ if(isset($_SESSION['user_id'])){
             <img src="images/homeneck.png"  alt="">
          </div>
          <div class="content">
-            <span>upto 50% off</span>
-            <h3>latest Necklace</h3>
-            <a href="shop.php" class="btn">shop now</a>
+            <span class="sale">upto 40% off</span><br><br>
+
+            <span class="span">Looking for wear-forever fashion jewelry?<br> You've come to the right place.</span><br><br>
+            <!-- <a href="shop.php" class="btn">shop now</a> -->
          </div>
       </div>
       
