@@ -159,9 +159,9 @@ if(isset($_SESSION['user_id'])){
       <div class="flex">
       <?php if ($fetch_product['is_sale'] == 1){ ?>
 
-         <div class="price"><span><del style="text-decoration:line-through; color:silver">$<?= $fetch_product['price']; ?></del><ins style="color:green; padding:20px 0px"> $<?=$fetch_product['price_discount'];?></ins></span></div>
+         <div class="price"><span><del style="text-decoration:line-through; color:silver">$<?= $fetch_product['price']; ?></del><ins style="color:red; padding:20px 0px"> $<?=$fetch_product['price_discount'];?></ins></span></div>
          <?php } else { ?>
-            <div class="name" style="color:green;">$<?= $fetch_product['price']; ?></div> <?php } ?>         <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
+            <div class="name" style="color:red;">$<?= $fetch_product['price']; ?></div> <?php } ?>         <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
       </div>
 
       <input type="submit" value="add to cart" class="btn" name="addTOcart">
