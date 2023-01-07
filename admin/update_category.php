@@ -158,25 +158,35 @@ if(isset($_POST['update'])){
       if($select_category->rowCount() > 0){
          while($fetch_category = $select_category->fetch(PDO::FETCH_ASSOC)){ 
    ?>
-   <form action="" method="post" enctype="multipart/form-data">
+<form action="" method="post" enctype="multipart/form-data">
+<div class="flex">
       <input type="hidden" name="cat_id" value="<?= $fetch_category['category_id']; ?>">
       <input type="hidden" name="old_image_01" value="<?= $fetch_category['image_01']; ?>" width="100px" height="100px">
-      <div class="image-container">
-         <div class="main-image">
-            <img src="../uploaded_img/<?= $fetch_category['image_01']; ?>" alt="">
+      <div class="inputBox">
+            <img class="Cimg" src="../uploaded_img/<?= $fetch_category['image_01']; ?>" alt="">
          </div>
-         
-      </div>
+	  <div class="inputBox">
       <span>update name</span>
-      <input type="text" name="name" required class="box" maxlength="100" placeholder="enter product name" value="<?= $fetch_category['category_name']; ?>">
+      <input  type="text" name="name"  class="box" required maxlength="100" placeholder="Enter product name" value="<?= $fetch_category['category_name']; ?>">
+	  </div>
+
+	  <div class="inputBox">
       <span>update image</span>
       <input type="file" name="image_01" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
-      <div class="flex-btn">
-         <input type="submit" name="update" class="btn" value="update">
-         <a href="category.php" class="option-btn">go back</a>
-      </div>
-   </form>
-   
+	  </div>
+
+      <!-- <div class="flex-btn"> -->
+	  <div class="inputBox">
+      <input type="submit" name="update" class="add-btn" value="update">
+	  </div>
+	  <!-- </div> -->
+      
+ </div> 
+ <br>
+ <a href="category.php" style">go back</a>
+</form>
+        
+
    <?php
          }
       }else{
