@@ -51,6 +51,16 @@ if(isset($_GET['delete'])){
 			<i class='bx bxs-smile'></i>
 			<span class="text">FELUX</span>
 		</a>
+		<?php
+      $select_accounts = $conn->prepare("SELECT * FROM `admins` WHERE id = '$admin_id'");
+      $select_accounts->execute();
+      if($select_accounts->rowCount() > 0){
+         while($fetch_accounts = $select_accounts->fetch(PDO::FETCH_ASSOC)){   
+   ?>
+		<span class="text brand1" >Welcome ,<?= $fetch_accounts['name'] ?> </span>
+		<?php
+         }}
+		 ?>
 		<ul class="side-menu top">
 			<li >
 				<a href="dashboard.php">
