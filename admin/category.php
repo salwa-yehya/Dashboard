@@ -58,8 +58,14 @@ if(isset($_GET['delete'])){
          }}
 		 ?>
 		<ul class="side-menu top">
+		<li >
+				<a href="dashboardd.php">
+				<i class='bx bxs-cog' ></i>
+				<span class="text">Home</span>
+				</a>
+			</li>
 			<li >
-				<a href="order.php">
+				<a href="oreder.php">
 				<i class='bx bxs-cog' ></i>
 					<span class="text">Orders</span>
 				</a>
@@ -124,15 +130,17 @@ if(isset($_GET['delete'])){
 
 		<!-- MAIN -->
 		<main>
-			<div class="head-title">
+		<div class="head-title">
 				<div class="left">
 					<h1>Category</h1>
 				</div>
-				
+				<a href="add_category.php" class="btn-download">
+				<i class="fa-solid fa-plus"></i>
+				<span class="text">Add New Category</span>
+				</a>
 			</div>
-<!-- ______________________________ -->
+		<!-- _____________ -->
 
-<a href="add_category.php"><button class="add-btn">Add New Category</button></a>
 
 			<div class="table-data">
 				<div class="order">
@@ -161,11 +169,11 @@ if(isset($_GET['delete'])){
 	  <!-- ____________ -->
 
 	  <td style="text-align:center;"><a style="color:green;" href="add_sale_category.php?sale_id_category=<?= $fetch_categorys['category_id']; ?>"><i class="fa-solid fa-square-plus"></i></a></td>
-      <td style="text-align:center;"> <a href="remove_sale_category.php?removeSale=<?= $fetch_categorys['category_id']; ?>"><i class="fa-solid fa-square-minus delete1"></i></a></td>
+      <td style="text-align:center;"> <a style="color:red;" href="remove_sale_category.php?removeSale=<?= $fetch_categorys['category_id']; ?>"><i class="fa-solid fa-square-minus delete1"></i></a></td>
 
 	  <!-- ____________ -->
       <td style="text-align:center;"><a class="editbtn" href="update_category.php?update=<?= $fetch_categorys['category_id']; ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
-      <td style="text-align:center;"><a href="category.php?delete=<?= $fetch_categorys['category_id']; ?>" onclick="return confirm('delete this category?');"><i class="fa-solid fa-trash delete1"></a></td>
+      <td style="text-align:center;"><a style="color:black;" href="category.php?delete=<?= $fetch_categorys['category_id']; ?>" onclick="return confirm('delete this category?');"><i class="fa-solid fa-trash delete1"></a></td>
     </tr>
     <?php
 	     }

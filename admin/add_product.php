@@ -110,13 +110,19 @@ if(isset($_POST['add_product'])){
          }}
 		 ?>
 		<ul class="side-menu top">
+		<li >
+				<a href="dashboardd.php">
+				<i class='bx bxs-cog' ></i>
+				<span class="text">Home</span>
+				</a>
+			</li>
 			<li >
 				<a href="order.php">
 				<i class='bx bxs-cog' ></i>
 					<span class="text">Orders</span>
 				</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="product.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Product</span>
@@ -233,7 +239,7 @@ if(isset($_POST['add_product'])){
                <option class="dropdown-item" name="category">
                      <?php 
                      // جوا تاج الاوبشن بقله اطبعلي الاي دييه لكل كاتيجوري بالاضافة لاسمها و بسكر التاج بعيدها
-                     echo ($fetch_category['category_id'].$fetch_category['category_name']); 
+                     echo ($fetch_category['category_id']." - ".$fetch_category['category_name']); 
                      ?>
                </option>
                <!-- هون بتكون جملة اللوب الاولى تبعت الوايل خلصت , فبرجع بلف كمان مرة و بطلع الكاتيجوري الثانية و هيك -->
@@ -246,7 +252,9 @@ if(isset($_POST['add_product'])){
          </div>
       </div>
       
-      <input type="submit" value="add product" class="add-btn" name="add_product">
+      <input type="submit" value="add product" class="add-btn" name="add_product"> <br><br>
+	  <a href="product.php" class="back"><i class="fa-solid fa-arrow-left"></i>Go Back</a>
+
    </form>
 
 </section>

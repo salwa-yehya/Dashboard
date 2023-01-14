@@ -45,13 +45,13 @@ if(!isset($admin_id)){
          }}
 		 ?>
 		<ul class="side-menu top">
-		<li  >
-			<a href="dashboardd.php">
-			<i class='bx bxs-cog' ></i>
-			<span class="text">Home</span>
-			</a>
+		<li class="active" >
+				<a href="dashboard.php">
+				<i class='bx bxs-cog' ></i>
+				<span class="text">Home</span>
+				</a>
 			</li>
-			<li class="active">
+			<li >
 				<a href="order.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Orders</span>
@@ -121,79 +121,116 @@ if(!isset($admin_id)){
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Orders</h1>
+					<h1>Dashboard</h1>
 				</div>
 				
 			</div>
-<!-- ______________________________ -->
 
+			<ul class="box-info">
+			
+				<!-- ________________________ -->
+				<li>
+				<?php
+            $select_products = $conn->prepare("SELECT * FROM `products`");
+            $select_products->execute();
+            $number_of_products = $select_products->rowCount()
+         ?>
+					<i class='bx bxs-calendar-check' ></i>
+					<span class="text">
+						<h3><?= $number_of_products; ?></h3>
+						<p>products added</p>
+					</span>
+				</li>
+				<li>
+				<?php
+            $select_users = $conn->prepare("SELECT * FROM `users`");
+            $select_users->execute();
+            $number_of_users = $select_users->rowCount()
+         ?>
+		 <i class='bx bxs-group' ></i>
+					
+					<span class="text">
+						<h3><?= $number_of_users; ?></h3>
+						<p>normal users</p>
+					</span>
+				</li>
+				<!-- ______________________________ -->
+				<?php
+            $select_orders = $conn->prepare("SELECT * FROM `orders`");
+            $select_orders->execute();
+            $number_of_orders = $select_orders->rowCount()
+         ?>
+				<li>
+				<i class='bx bxs-calendar-check' ></i>
+					<span class="text">
+						<h3><?= $number_of_orders; ?></h3>
+						<p>Number of Orders</p>
+					</span>
+				</li>
+				<?php
+            $total_pendings = 0;
+            $select_pendings = $conn->prepare("SELECT * FROM `orders`");
+            $select_pendings->execute();
+            if($select_pendings->rowCount() > 0){
+               while($fetch_pendings = $select_pendings->fetch(PDO::FETCH_ASSOC)){
+                  $total_pendings += $fetch_pendings['total_price'];
+               }
+            }
+         ?>
+				<li>
+					<i class='bx bxs-dollar-circle' ></i>
+					<span class="text">
+						<h3>JD<?= $total_pendings; ?></h3>
+						<p>Total Sales</p>
+					</span>
+				</li>
+			</ul>
 
+<!-- ____________________Recent Orders______________________-- -->
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<!-- <h3>Product</h3>
+						<h3>Recent Orders</h3>
 						<i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i> -->
+						<i class='bx bx-filter' ></i>
 					</div>
 					<table>
-					<thead>
-					<tr>
-					<th style="font-size: 17px;width: 20rem;">Name</th>	
-					<th style="font-size: 17px;width: 20rem;">Number</th>
-					<th style="font-size: 17px;width: 20rem;">Email</th>
-					<th style="font-size: 17px;width: 20rem;">Location</th>
-					<th style="font-size: 17px;width: 20rem;">NameProduct</th>
-					<th style="font-size: 17px;width: 20rem;">Order_Time</th>
-					<th style="font-size: 17px;width: 20rem;">Quantity</th>
-					<th style="font-size: 17px;width: 20rem;">Price</th>
-					
-
-					
-					</tr>
-				</thead>
+						<thead>
+							<tr>
+								<th>Order Number</th>
+								<th>Date Order</th>
+								<th>Total Quantity</th>
+								<th>Total Price</th>
+							</tr>
+						</thead>
 						<tbody>
-						<?php $select_orders = $conn->prepare("SELECT * 
-                                       FROM `orders`
-                                       INNER JOIN `users` ON Orders.user_id = users.user_id;");
-//______________
-$sql="SELECT
-order_details.NameProduct,order_details.price,order_details.quantity,order_details.NameUser,
-orders.location,orders.order_time,orders.total_quantity,orders.number,orders.email
-FROM order_details INNER JOIN orders
-ON order_details.order_id=orders.order_id
-";
-$db=$conn->prepare($sql);
-$db->execute();
-$data= $db->fetchAll(PDO::FETCH_ASSOC);
-foreach ($data as $value){
-							
+						<?PHP 
+							$sql = "SELECT * FROM `orders`";
+							$db=$conn->prepare($sql);
+							$db->execute();
+							if($db->rowCount() > 0){
+								while($data= $db->fetch(PDO::FETCH_ASSOC)){   
 						
-
-									// _________________
-     
-   ?>
-    <tr>
-	
-      <td><?= $value['NameUser']; ?></td>
-      <td><?=$value['number']; ?></td>
-      <td><?= $value['email']; ?></td>
-	  <td><?= $value['location']; ?></td>
-      <td><?= $value['NameProduct']; ?></td>
-      <td><?= $value['order_time']; ?></td>
-      <td style="text-align: center;"><?= $value['quantity']; ?></td>
-	  <td>JD<?= $value['price']; ?></td>
-    </tr>
-
-    <?php
-  }
-   ?>
+							?>
+						<tr>
+								<td>
+									
+									<p><?=$data['order_id'] ?> </p>
+								</td>
+								<td><?=$data['order_time'] ?></td>
+								<td><?=$data['total_quantity'] ?></td>
+								<td><?=$data['total_price'] ?></td>
+							</tr>
+							<?PHP }}?>
+							
+ 
 						</tbody>
 					</table>
-	<!-- ______________________________ -->
 				</div>
-			
+				
 			</div>
 		</main>
+		<!-- MAIN -->
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
