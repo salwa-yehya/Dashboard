@@ -45,19 +45,25 @@ if(!isset($admin_id)){
          }}
 		 ?>
 		<ul class="side-menu top">
-			
-			<li class="active">
+		<li class="active" >
+
 				<a href="dashboard.php">
+				<i class='bx bxs-cog' ></i>
+				<span class="text">Home</span>
+				</a>
+			</li>
+			<li >
+				<a href="order.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Orders</span>
 				</a>
 			</li>
-			<li>
+			<!-- <li>
 				<a href="add_product.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Add Product</span>
 				</a>
-			</li>
+			</li> -->
 			<li>
 				<a href="product.php">
 					<i class='bx bxs-cog' ></i>
@@ -65,12 +71,12 @@ if(!isset($admin_id)){
 				</a>
 			</li>
 			
-			<li>
+			<!-- <li>
 				<a href="add_category.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Add Category</span>
 				</a>
-			</li>
+			</li> -->
 		<li>
 				<a href="category.php">
 					<i class='bx bxs-cog' ></i>
@@ -123,67 +129,134 @@ if(!isset($admin_id)){
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
+		<!-- MAIN -->
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Orders</h1>
+					<h1>Dashboard</h1>
 				</div>
-				
+				<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a>
 			</div>
-<!-- ______________________________ -->
+
+			<ul class="box-info">
+				<li>
+					<i class='bx bxs-calendar-check' ></i>
+					<span class="text">
+						<h3>1020</h3>
+						<p>New Order</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-group' ></i>
+					<span class="text">
+						<h3>2834</h3>
+						<p>Visitors</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-dollar-circle' ></i>
+					<span class="text">
+						<h3>$2543</h3>
+						<p>Total Sales</p>
+					</span>
+				</li>
+			</ul>
 
 
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<!-- <h3>Product</h3>
+						<h3>Recent Orders</h3>
 						<i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i> -->
+						<i class='bx bx-filter' ></i>
 					</div>
 					<table>
-					<thead>
-					<tr>
-					<th >Name</th>	
-					<th >Number</th>
-					<th >Email</th>
-					<th >Total Products</th>
-					<th >Total Price</th>
-					<th >Order_Time</th>
-					<th >Location</th>
-					</tr>
-				</thead>
+						<thead>
+							<tr>
+								<th>User</th>
+								<th>Date Order</th>
+								<th>Status</th>
+							</tr>
+						</thead>
 						<tbody>
-						<?php $select_orders = $conn->prepare("SELECT * 
-                                       FROM `orders`
-                                       INNER JOIN `users` ON Orders.user_id = users.user_id;");
-      $select_orders->execute();
-      if($select_orders->rowCount() > 0){
-         while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
-   ?>
-    <tr>
-      
-      <td><?= $fetch_orders['name']; ?></td>
-      <td><?= $fetch_orders['number']; ?></td>
-      <td><?= $fetch_orders['email']; ?></td>
-      <td><?= $fetch_orders['total_quantity']; ?></td>
-      <td>JD<?= $fetch_orders['total_price']; ?></td>
-      <td><?= $fetch_orders['order_time']; ?></td>
-	  <td><?= $fetch_orders['location']; ?></td>
-    </tr>
-
-    <?php
-         }
-      }else{
-         echo '<p class="empty">no orders placed yet!</p>';
-      }
-   ?>
+							<tr>
+								<td>
+									
+									<p>Mohammad</p>
+								</td>
+								<td>07-01-2023</td>
+								<td><span class="status completed">Completed</span></td>
+							</tr>
+							<tr>
+								<td>
+									
+									<p>Bayan</p>
+								</td>
+								<td>07-01-2023</td>
+								<td><span class="status pending">Pending</span></td>
+							</tr>
+							<tr>
+								<td>
+									
+									<p>Shahed</p>
+								</td>
+								<td>07-01-2023</td>
+								<td><span class="status process">Process</span></td>
+							</tr>
+							<tr>
+								<td>
+									
+									<p>Sama</p>
+								</td>
+								<td>07-01-2023</td>
+								<td><span class="status pending">Pending</span></td>
+							</tr>
+							<tr>
+								<td>
+									
+									<p>Hussien</p>
+								</td>
+								<td>07-01-2023</td>
+								<td><span class="status completed">Completed</span></td>
+							</tr>
 						</tbody>
 					</table>
-	<!-- ______________________________ -->
 				</div>
-			
+				<div class="todo">
+					<div class="head">
+						<h3>Todos</h3>
+						<i class='bx bx-plus' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<ul class="todo-list">
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</main>
+		<!-- MAIN -->
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->

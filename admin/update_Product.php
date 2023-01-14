@@ -82,8 +82,14 @@ if(isset($_POST['update'])){
          }}
 		 ?>
 		<ul class="side-menu top">
-			<li >
+      <li >
 				<a href="dashboard.php">
+				<i class='bx bxs-cog' ></i>
+				<span class="text">Home</span>
+				</a>
+			</li>
+			<li >
+				<a href="order.php">
 				<i class='bx bxs-cog' ></i>
 					<span class="text">Orders</span>
 				</a>

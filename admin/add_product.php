@@ -110,18 +110,24 @@ if(isset($_POST['add_product'])){
          }}
 		 ?>
 		<ul class="side-menu top">
-			<li >
+		<li >
 				<a href="dashboard.php">
+				<i class='bx bxs-cog' ></i>
+				<span class="text">Home</span>
+				</a>
+			</li>
+			<li >
+				<a href="order.php">
 				<i class='bx bxs-cog' ></i>
 					<span class="text">Orders</span>
 				</a>
 			</li>
-			<li class="active" >
+			<!-- <li class="active" >
 				<a href="add_product.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Add Product</span>
 				</a>
-			</li>
+			</li> -->
 			<li>
 				<a href="product.php">
 					<i class='bx bxs-cog' ></i>
@@ -129,12 +135,12 @@ if(isset($_POST['add_product'])){
 				</a>
 			</li>
            
-			<li>
+			<!-- <li>
 				<a href="add_category.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Add Category</span>
 				</a>
-			</li>
+			</li> -->
 		 <li>
 				<a href="category.php">
 					<i class='bx bxs-cog' ></i>
