@@ -51,7 +51,7 @@ $xx->execute();
 
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="css/style.css">
    
 </head>
 

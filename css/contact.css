@@ -17,7 +17,7 @@ height: 40rem;
     /* text-transform: uppercase; */
  }
 .container-page{
-width : 80%;
+/* width : 80%; */
 padding: 20px 60px 40px 40px;
 display: flex;
 align-items: center;
@@ -26,11 +26,12 @@ padding-left: 20rem;
 
 }
 .details{
-text-align: center;
+/* text-align: center; */
+padding: 20%;
 }
 .conticon{
     font-size: 3rem;
-    color : #185E5B ;
+    color : #000000 ;
     
 }
 .topic{
@@ -38,8 +39,12 @@ text-align: center;
     font-weight: 600;
 }
 .text-one{
-    text-align: center;
+    /* text-align: center; */
     font-size: 15px;
     font-weight: 400;
     color: rgb(56, 61, 52);
+}
+
+.conne{
+    display: flex;
 }
