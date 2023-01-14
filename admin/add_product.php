@@ -239,7 +239,7 @@ if(isset($_POST['add_product'])){
                <option class="dropdown-item" name="category">
                      <?php 
                      // جوا تاج الاوبشن بقله اطبعلي الاي دييه لكل كاتيجوري بالاضافة لاسمها و بسكر التاج بعيدها
-                     echo ($fetch_category['category_id'].$fetch_category['category_name']); 
+                     echo ($fetch_category['category_id']." - ".$fetch_category['category_name']); 
                      ?>
                </option>
                <!-- هون بتكون جملة اللوب الاولى تبعت الوايل خلصت , فبرجع بلف كمان مرة و بطلع الكاتيجوري الثانية و هيك -->

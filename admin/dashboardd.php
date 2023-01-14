@@ -123,37 +123,70 @@ if(!isset($admin_id)){
 				<div class="left">
 					<h1>Dashboard</h1>
 				</div>
-				<a href="#" class="btn-download">
-					<i class='bx bxs-cloud-download' ></i>
-					<span class="text">Download PDF</span>
-				</a>
+				
 			</div>
 
 			<ul class="box-info">
+			
+				<!-- ________________________ -->
 				<li>
+				<?php
+            $select_products = $conn->prepare("SELECT * FROM `products`");
+            $select_products->execute();
+            $number_of_products = $select_products->rowCount()
+         ?>
 					<i class='bx bxs-calendar-check' ></i>
 					<span class="text">
-						<h3>1020</h3>
-						<p>New Order</p>
+						<h3><?= $number_of_products; ?></h3>
+						<p>products added</p>
 					</span>
 				</li>
 				<li>
-					<i class='bx bxs-group' ></i>
+				<?php
+            $select_users = $conn->prepare("SELECT * FROM `users`");
+            $select_users->execute();
+            $number_of_users = $select_users->rowCount()
+         ?>
+		 <i class='bx bxs-group' ></i>
+					
 					<span class="text">
-						<h3>2834</h3>
-						<p>Visitors</p>
+						<h3><?= $number_of_users; ?></h3>
+						<p>normal users</p>
 					</span>
 				</li>
+				<!-- ______________________________ -->
+				<?php
+            $select_orders = $conn->prepare("SELECT * FROM `orders`");
+            $select_orders->execute();
+            $number_of_orders = $select_orders->rowCount()
+         ?>
+				<li>
+				<i class='bx bxs-calendar-check' ></i>
+					<span class="text">
+						<h3><?= $number_of_orders; ?></h3>
+						<p>Number of Orders</p>
+					</span>
+				</li>
+				<?php
+            $total_pendings = 0;
+            $select_pendings = $conn->prepare("SELECT * FROM `orders`");
+            $select_pendings->execute();
+            if($select_pendings->rowCount() > 0){
+               while($fetch_pendings = $select_pendings->fetch(PDO::FETCH_ASSOC)){
+                  $total_pendings += $fetch_pendings['total_price'];
+               }
+            }
+         ?>
 				<li>
 					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
-						<h3>$2543</h3>
+						<h3>JD<?= $total_pendings; ?></h3>
 						<p>Total Sales</p>
 					</span>
 				</li>
 			</ul>
 
-
+<!-- ____________________Recent Orders______________________-- -->
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
@@ -164,67 +197,37 @@ if(!isset($admin_id)){
 					<table>
 						<thead>
 							<tr>
-								<th>User</th>
+								<th>Order Number</th>
 								<th>Date Order</th>
-								<th>Status</th>
+								<th>Total Quantity</th>
+								<th>Total Price</th>
 							</tr>
 						</thead>
 						<tbody>
-	
+						<?PHP 
+							$sql = "SELECT * FROM `orders`";
+							$db=$conn->prepare($sql);
+							$db->execute();
+							if($db->rowCount() > 0){
+								while($data= $db->fetch(PDO::FETCH_ASSOC)){   
+						
+							?>
 						<tr>
 								<td>
 									
-									<p>Sama </p>
+									<p><?=$data['order_id'] ?> </p>
 								</td>
-								<td>07-01-2023</td>
-								<td><span class="status completed">Completed</span></td>
+								<td><?=$data['order_time'] ?></td>
+								<td><?=$data['total_quantity'] ?></td>
+								<td><?=$data['total_price'] ?></td>
 							</tr>
-							<tr>
-								<td>
-									<p>Shahed</p>
-								</td>
-								<td>07-01-2023</td>
-								<td><span class="status process">Process</span></td>							</tr>
-							<tr>
-								<td>
-									<p>mohammad</p>
-								</td>
-								<td>07-01-2023</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
+							<?PHP }}?>
+							
  
 						</tbody>
 					</table>
 				</div>
-				<div class="todo">
-					<div class="head">
-						<h3>Todos</h3>
-						<i class='bx bx-plus' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<ul class="todo-list">
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-					</ul>
-				</div>
+				
 			</div>
 		</main>
 		<!-- MAIN -->
