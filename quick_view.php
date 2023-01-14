@@ -106,7 +106,7 @@ if(isset($_SESSION['user_id'])){
 
 </section>
 <!-- start add comment -->
-<section class="quick-view">
+<section class="Review-view comments">
    <h1 class="heading">Review for products</h1>
         <?php
         $query = "SELECT * FROM review INNER JOIN users 
@@ -122,7 +122,7 @@ if(isset($_SESSION['user_id'])){
            $user_name = $comment['name'];
            ?>
            <div class="com">
-                  <h2 id="uscom"><?php echo $user_name ?></h>
+                  <h2 id="uscom"><?php echo $user_name ?></h2>
                   <p id="datecom"><?php echo $comment_date ?></p>
                   <p id="textcom"><?php echo  $comment_content; ?></p>
                  
@@ -143,14 +143,14 @@ if(isset($_SESSION['user_id'])){
          ?>
          <?php
          if(isset($_SESSION['user_id'])){ ?>
-            <form action="" method="post">
+            <form action="" method="post" class="addComment">
             <div >
-               <div>
-                  <textarea style="width:1110px; border:2px solid silver"  class="form-control" name="comment_text" cols="12"  rows="3" placeholder="Add your comment" value=""></textarea>
+               <div  >
+                  <textarea style="width:100%; border:2px solid silver; height: 100px"  class="form-control" name="comment_text" cols="12"  rows="3" placeholder="Add your comment" value=""></textarea>
                </div>
             </div>
             <div class="col-md-12 text-right">
-               <button type="submit" name="submit_comment" class="btn submit_btn">
+               <button type="submit" name="submit_comment" style="width: 100%;" class="btn submit_btn">
                   Submit Now
                </button>
             </div>
