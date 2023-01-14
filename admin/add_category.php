@@ -80,7 +80,7 @@ if(isset($_POST['add_category'])){
 		 ?>
 		<ul class="side-menu top">
 		<li >
-				<a href="dashboard.php">
+				<a href="dashboardd.php">
 				<i class='bx bxs-cog' ></i>
 				<span class="text">Home</span>
 				</a>
@@ -100,7 +100,7 @@ if(isset($_POST['add_category'])){
 			</li>
             
 			
-		<li>
+		<li class="active">
 				<a href="category.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Category</span>
@@ -186,7 +186,9 @@ if(isset($_POST['add_category'])){
         </div>
       </div>
       
-      <input type="submit" value="Add category" class="add-btn" name="add_category">
+      <input type="submit" value="Add category" class="add-btn" name="add_category"> <br><br>
+	  <a href="product.php" class="back"><i class="fa-solid fa-arrow-left"></i>Go Back</a>
+
    </form>
 
 </section>
