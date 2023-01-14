@@ -10,6 +10,18 @@ if(!isset($admin_id)){
    header('location:admin_login.php');
 }
 
+if(isset($_GET['delete'])){
+   $delete_id = $_GET['delete'];
+   $delete_user = $conn->prepare("DELETE FROM `users` WHERE user_id = ?");
+   $delete_user->execute([$delete_id]);
+   $delete_orders = $conn->prepare("DELETE FROM `orders` WHERE user_id = ?");
+   $delete_orders->execute([$delete_id]);
+   $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
+   $delete_cart->execute([$delete_id]);
+   
+   header('location:users.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +44,7 @@ if(!isset($admin_id)){
 	<section id="sidebar">
 		<a href="dashboard.php" class="brand">
 			<i class='bx bxs-smile'></i>
-			<span class="text">FELUX</span>
+			<span class="text text2">FELUX</span>
 		</a>
 		<?php
       $select_accounts = $conn->prepare("SELECT * FROM `admins` WHERE id = '$admin_id'");
@@ -45,35 +57,32 @@ if(!isset($admin_id)){
          }}
 		 ?>
 		<ul class="side-menu top">
-			
-			<li class="active">
+			<li >
 				<a href="dashboard.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Orders</span>
 				</a>
 			</li>
-		
+			
 			<li>
 				<a href="product.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Product</span>
 				</a>
 			</li>
-			
-			
 		<li>
 				<a href="category.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Category</span>
 				</a>
 			</li>
-			<li>
-			<a href="users.php">
+			<li >
+				<a href="users.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Users</span>
 				</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="admin.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Admins</span>
@@ -89,7 +98,7 @@ if(!isset($admin_id)){
 		
 			<ul class="side-menu">
 			<li>
-				<a href="../components/admin_logout.php" class="logout">
+				<a href="#" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span class="text">Logout</span>
 				</a>
@@ -105,7 +114,6 @@ if(!isset($admin_id)){
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu' ></i>
-			<!-- <i class="fa-solid fa-user"></i> -->
 			<!-- <input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label> -->
 			
@@ -116,57 +124,46 @@ if(!isset($admin_id)){
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Orders</h1>
+					<h1>Admins</h1>
 				</div>
 				
 			</div>
 <!-- ______________________________ -->
-
-
-			<div class="table-data">
-				<div class="order">
+<a href="add_new_admin.php"><button class="add-btn">Add New Admin</button></a>
+			<div class="table-data" style="width:65%;">
+				<div class="order" >
 					<div class="head">
 						<!-- <h3>Product</h3>
 						<i class='bx bx-search' ></i>
 						<i class='bx bx-filter' ></i> -->
 					</div>
-					<table>
+					<table >
 					<thead>
 					<tr>
-					<th >Name</th>	
-					<th >Number</th>
-					<th >Email</th>
-					<th >Total Products</th>
-					<th >Total Price</th>
-					<th >Order_Time</th>
-					<th >Location</th>
+                    <th >Admin id</th>   
+					<th >Name Admin</th>	
+					
 					</tr>
 				</thead>
 						<tbody>
-						<?php $select_orders = $conn->prepare("SELECT * 
-                                       FROM `orders`
-                                       INNER JOIN `users` ON Orders.user_id = users.user_id;");
-      $select_orders->execute();
-      if($select_orders->rowCount() > 0){
-         while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
+						<?php
+      $select_accounts = $conn->prepare("SELECT * FROM `admins`");
+      $select_accounts->execute();
+      if($select_accounts->rowCount() > 0){
+         while($fetch_accounts = $select_accounts->fetch(PDO::FETCH_ASSOC)){   
    ?>
     <tr>
+      <th scope="row"><?= $fetch_accounts['id']; ?></th>
+      <td><?= $fetch_accounts['name']; ?></td>
       
-      <td><?= $fetch_orders['name']; ?></td>
-      <td><?= $fetch_orders['number']; ?></td>
-      <td><?= $fetch_orders['email']; ?></td>
-      <td><?= $fetch_orders['total_quantity']; ?></td>
-      <td>JD<?= $fetch_orders['total_price']; ?></td>
-      <td><?= $fetch_orders['order_time']; ?></td>
-	  <td><?= $fetch_orders['location']; ?></td>
     </tr>
-
     <?php
          }
       }else{
-         echo '<p class="empty">no orders placed yet!</p>';
+         echo '<p class="empty">no accounts available!</p>';
       }
    ?>
+						
 						</tbody>
 					</table>
 	<!-- ______________________________ -->
@@ -181,7 +178,7 @@ if(!isset($admin_id)){
    if(isset($message)){
       foreach($message as $message){
          echo '
-         <div >
+         <div>
             <span>'.$message.'</span>
             <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
          </div>
@@ -189,7 +186,6 @@ if(!isset($admin_id)){
       }
    }
 ?>
-	
 
 	<script src="script.js"></script>
 </body>
