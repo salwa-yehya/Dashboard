@@ -58,7 +58,7 @@ if(isset($_GET['delete'])){
          }}
 		 ?>
 		<ul class="side-menu top">
-		<li class="active">
+		<li >
 				<a href="dashboardd.php">
 				<i class='bx bxs-cog' ></i>
 				<span class="text">Home</span>
@@ -169,11 +169,11 @@ if(isset($_GET['delete'])){
 	  <!-- ____________ -->
 
 	  <td style="text-align:center;"><a style="color:green;" href="add_sale_category.php?sale_id_category=<?= $fetch_categorys['category_id']; ?>"><i class="fa-solid fa-square-plus"></i></a></td>
-      <td style="text-align:center;"> <a href="remove_sale_category.php?removeSale=<?= $fetch_categorys['category_id']; ?>"><i class="fa-solid fa-square-minus delete1"></i></a></td>
+      <td style="text-align:center;"> <a style="color:red;" href="remove_sale_category.php?removeSale=<?= $fetch_categorys['category_id']; ?>"><i class="fa-solid fa-square-minus delete1"></i></a></td>
 
 	  <!-- ____________ -->
       <td style="text-align:center;"><a class="editbtn" href="update_category.php?update=<?= $fetch_categorys['category_id']; ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
-      <td style="text-align:center;"><a href="category.php?delete=<?= $fetch_categorys['category_id']; ?>" onclick="return confirm('delete this category?');"><i class="fa-solid fa-trash delete1"></a></td>
+      <td style="text-align:center;"><a style="color:black;" href="category.php?delete=<?= $fetch_categorys['category_id']; ?>" onclick="return confirm('delete this category?');"><i class="fa-solid fa-trash delete1"></a></td>
     </tr>
     <?php
 	     }

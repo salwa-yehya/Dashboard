@@ -41,7 +41,13 @@ if(isset($_GET['delete'])){
 	<link rel="stylesheet" href="style.css">
 
 	<title>Felux_Dashbord</title>
+<style>
+	th {
+		width: 20rem;
+	}
+</style>
 </head>
+
 <body>
 
 
@@ -62,7 +68,7 @@ if(isset($_GET['delete'])){
          }}
 		 ?>
 		<ul class="side-menu top">
-		<li class="active" >
+		<li  >
 				<a href="dashboardd.php">
 				<i class='bx bxs-cog' ></i>
 				<span class="text">Home</span>
@@ -186,7 +192,7 @@ if(isset($_GET['delete'])){
       <td >JD<span><?= $fetch_products['price']; ?></td>
       <td style="text-align:center;">JD<span><?= $fetch_products['price_discount']; ?></td>
       <td style="text-align:center;"><a style="color:green;" href="add_sale.php?sale=<?= $fetch_products['product_id']; ?>"><i class="fa-solid fa-square-plus"></i></a></td>
-      <td style="text-align:center;"> <a href="remove_sale.php?removeSale=<?= $fetch_products['product_id']; ?>"><i class="fa-solid fa-square-minus delete1"></i></a></td>
+      <td style="text-align:center;"> <a style="color:red;" href="remove_sale.php?removeSale=<?= $fetch_products['product_id']; ?>"><i class="fa-solid fa-square-minus delete1"></i></a></td>
       <?php $product_category = $conn->prepare("SELECT * 
                                         FROM `products`
                                         INNER JOIN `category` ON products.category_id = category.category_id");

@@ -25,7 +25,7 @@
 		</a>
 	
 		<ul class="side-menu top">
-        <li class="active">
+        <li >
 				<a href="dashboardd.php">
 				<i class='bx bxs-cog' ></i>
 				<span class="text">Home</span>
@@ -46,7 +46,7 @@
 			</li>
            
 			
-		 <li>
+		 <li class="active">
 				<a href="category.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Category</span>

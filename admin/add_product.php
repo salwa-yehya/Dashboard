@@ -110,7 +110,7 @@ if(isset($_POST['add_product'])){
          }}
 		 ?>
 		<ul class="side-menu top">
-		<li class="active">
+		<li >
 				<a href="dashboardd.php">
 				<i class='bx bxs-cog' ></i>
 				<span class="text">Home</span>
@@ -122,7 +122,7 @@ if(isset($_POST['add_product'])){
 					<span class="text">Orders</span>
 				</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="product.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Product</span>
@@ -252,7 +252,9 @@ if(isset($_POST['add_product'])){
          </div>
       </div>
       
-      <input type="submit" value="add product" class="add-btn" name="add_product">
+      <input type="submit" value="add product" class="add-btn" name="add_product"> <br><br>
+	  <a href="product.php" class="back"><i class="fa-solid fa-arrow-left"></i>Go Back</a>
+
    </form>
 
 </section>
