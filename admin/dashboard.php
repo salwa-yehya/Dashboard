@@ -172,7 +172,9 @@ if(!isset($admin_id)){
 							</tr>
 						</thead>
 						<tbody>
-						
+	
+
+ 
 						</tbody>
 					</table>
 				</div>
@@ -207,10 +209,23 @@ if(!isset($admin_id)){
 				</div>
 			</div>
 		</main>
-	
+		<!-- MAIN -->
+		<!-- MAIN -->
 	</section>
-
-
+	<!-- CONTENT -->
+	<?php
+   if(isset($message)){
+      foreach($message as $message){
+         echo '
+         <div >
+            <span>'.$message.'</span>
+            <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+         </div>
+         ';
+      }
+   }
+?>
+	
 
 	<script src="script.js"></script>
 </body>
