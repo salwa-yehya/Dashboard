@@ -62,10 +62,10 @@ if (isset($message)) {
                <a href="user_register.php" class="option-btn">register</a>
                <a href="user_login.php" class="option-btn">login</a>
             </div>
+             
          <?php
          }
          ?>
-
 
       </div>
 

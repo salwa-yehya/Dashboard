@@ -80,10 +80,17 @@ body {
 	position: sticky;
 	top: 0;
 	left: 0;
-	background: var(--light);
 	z-index: 500;
-	padding-bottom: 20px;
+	/* padding-bottom: 20px; */
 	box-sizing: content-box;
+}
+.brand1{
+	font-size: 17px;
+	font-weight: 700;
+    color: red;
+	display: flex;
+	justify-content: center;
+
 }
 #sidebar .brand .bx {
 	min-width: 60px;
