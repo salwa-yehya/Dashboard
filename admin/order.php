@@ -45,7 +45,12 @@ if(!isset($admin_id)){
          }}
 		 ?>
 		<ul class="side-menu top">
-			
+		<li  >
+			<a href="dashboardd.php">
+			<i class='bx bxs-cog' ></i>
+			<span class="text">Home</span>
+			</a>
+			</li>
 			<li class="active">
 				<a href="order.php">
 					<i class='bx bxs-cog' ></i>
@@ -133,14 +138,14 @@ if(!isset($admin_id)){
 					<table>
 					<thead>
 					<tr>
-					<th >Name</th>	
-					<th >Number</th>
-					<th >Email</th>
-					<th >Location</th>
-					<th >NameProduct</th>
-					<th >Order_Time</th>
-					<th >Quantity</th>
-					<th >Price</th>
+					<th style="font-size: 17px;width: 20rem;">Name</th>	
+					<th style="font-size: 17px;width: 20rem;">Number</th>
+					<th style="font-size: 17px;width: 20rem;">Email</th>
+					<th style="font-size: 17px;width: 20rem;">Location</th>
+					<th style="font-size: 17px;width: 20rem;">NameProduct</th>
+					<th style="font-size: 17px;width: 20rem;">Order_Time</th>
+					<th style="font-size: 17px;width: 20rem;">Quantity</th>
+					<th style="font-size: 17px;width: 20rem;">Price</th>
 					
 
 					
@@ -168,14 +173,14 @@ foreach ($data as $value){
      
    ?>
     <tr>
-      
+	
       <td><?= $value['NameUser']; ?></td>
       <td><?=$value['number']; ?></td>
       <td><?= $value['email']; ?></td>
 	  <td><?= $value['location']; ?></td>
       <td><?= $value['NameProduct']; ?></td>
       <td><?= $value['order_time']; ?></td>
-      <td><?= $value['quantity']; ?></td>
+      <td style="text-align: center;"><?= $value['quantity']; ?></td>
 	  <td>JD<?= $value['price']; ?></td>
     </tr>
 

@@ -70,7 +70,7 @@ if(isset($_POST['submit'])){
 		
 		<ul class="side-menu top">
 		<li >
-				<a href="dashboard.php">
+				<a href="dashboardd.php">
 				<i class='bx bxs-cog' ></i>
 				<span class="text">Home</span>
 				</a>

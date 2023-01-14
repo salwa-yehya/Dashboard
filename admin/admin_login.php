@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 
    if($select_admin->rowCount() > 0){
       $_SESSION['admin_id'] = $row['id'];
-      header('location:dashboard.php');
+      header('location:dashboardd.php');
    }else{
       $message[] = 'incorrect username or password!';
    }
