@@ -219,7 +219,7 @@ if(!isset($admin_id)){
 								</td>
 								<td><?=$data['order_time'] ?></td>
 								<td><?=$data['total_quantity'] ?></td>
-								<td><?=$data['total_price'] ?></td>
+								<td>JD<?=$data['total_price'] ?></td>
 							</tr>
 							<?PHP }}?>
 							
