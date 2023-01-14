@@ -15,7 +15,7 @@ if (isset($message)) {
 
    <section class="flex">
 
-      <a href="home.php" class="logo">FELUX<span>.</span></a>
+      <a href="home.php"><img src="images/logo9.png" width="100px" alt=""></a>
 
       <nav class="navbar">
 
