@@ -26,13 +26,23 @@ if(isset($_SESSION['user_id'])){
 </head>
 <body>
 	<?php
-      $select_orders = $conn->prepare("SELECT * 
-                                       FROM `orders`
-                                       INNER JOIN `users` ON Orders.user_id = users.user_id ORDER BY Orders.order_id DESC" );
-      $select_orders->execute();
-      if($select_orders->rowCount() > 0){
-         $fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC);
-            if ($fetch_orders['user_id'] == $user_id){
+$user = $conn->prepare("SELECT * FROM `users` where user_id= $user_id " );
+$user->execute();
+$select_user= $user->fetch(PDO::FETCH_ASSOC);
+// _______________________________
+$lastOrder=$_SESSION['last_order'];
+$sql="SELECT
+order_details.NameProduct,order_details.price,order_details.quantity,
+orders.total_price,orders.location,orders.order_time,orders.total_quantity,orders.number,orders.email
+FROM order_details INNER JOIN orders
+ON order_details.order_id=orders.order_id
+WHERE order_details.order_id ='$lastOrder'";
+$db=$conn->prepare($sql);
+$db->execute();
+$data= $db->fetchAll(PDO::FETCH_ASSOC);
+
+// _____________________________________-
+
    ?>
 <div class="col-md-12">   
  <div class="row">
@@ -41,9 +51,7 @@ if(isset($_SESSION['user_id'])){
             <div class="row">
     			<div class="receipt-header">
 					<div class="col-xs-6 col-sm-6 col-md-6">
-						<div class="receipt-left">
-							<img class="img-responsive" alt="iamgurdeeposahan" src="https://bootdey.com/img/Content/avatar/avatar6.png" style="width: 71px; border-radius: 43px;">
-						</div>
+					<a href="shop.php" class="option-btn">continue shopping</a>
 					</div>
 					<div class="col-xs-6 col-sm-6 col-md-6 text-right">
 						<div class="receipt-right">
@@ -60,11 +68,14 @@ if(isset($_SESSION['user_id'])){
 				<div class="receipt-header receipt-header-mid">
 					<div class="col-xs-8 col-sm-8 col-md-8 text-left">
 						<div class="receipt-right">
-							<h5><?= $fetch_orders['name']; ?> </h5>
-							<p><b>Mobile :</b> <?= $fetch_orders['number']; ?></p>
-							<p><b>Email :</b> <?= $fetch_orders['email']; ?></p>
-							<p><b>Address :</b> <?= $fetch_orders['location']; ?></p>
+
+
+							<h5><?= $select_user['name']; ?> </h5>
+							<p><b>Mobile :</b> <?= $data[0]['number']; ?></p>
+							<p><b>Email :</b> <?= $data[0]['email']; ?></p>
+							<p><b>Address :</b> <?= $data[0]['location']; ?></p>
 						</div>
+					
 					</div>
 					<div class="col-xs-4 col-sm-4 col-md-4">
 						<div class="receipt-left">
@@ -78,20 +89,25 @@ if(isset($_SESSION['user_id'])){
                     <thead>
                         <tr>
                             <th>Description</th>
-                            <th>details</th>
+							<th>Quantity</th>
+                            <th>Price </th>
+							
                         </tr>
                     </thead>
                     <tbody>
+				<?php	foreach ($data as $value) {?>
                         <tr>
-                            <td class="col-md-9">total_quantity</td>
-                            <td class="col-md-3"><i class="fa fa-inr"></i> <?= $fetch_orders['total_quantity']; ?></td>
+                            <td class="col-md-9"><?= $value['NameProduct']; ?></td>
+                          
+							<td class="col-md-3"><i class="fa fa-inr"></i> <?= $value['quantity']; ?></td>  
+							<td class="col-md-3"><i class="fa fa-inr"></i> <?= " JD".$value['price']; ?></td>
                         </tr>
                       
-                       
+						<?php	}?>
                         <tr>
                            
                             <td class="text-right"><h2><strong>Total Price: </strong></h2></td>
-                            <td class="text-left text-danger"><h2><strong><i class="fa fa-inr"></i> JD<?= $fetch_orders['total_price']; ?></strong></h2></td>
+                            <td class="text-left text-danger" colspan="2"><h2><strong><i class="fa fa-inr"></i> JD<?= $value['total_price']; ?></strong></h2></td>
                         </tr>
                     </tbody>
                 </table>
@@ -101,7 +117,7 @@ if(isset($_SESSION['user_id'])){
 				<div class="receipt-header receipt-header-mid receipt-footer">
 					<div class="col-xs-8 col-sm-8 col-md-8 text-left">
 						<div class="receipt-right">
-							<p><b>Date :</b><?= $fetch_orders['order_time']; ?></p>
+							<p><b>Date :</b><?= $value['order_time']; ?></p>
 							<h5 style="color: rgb(140, 140, 140);">Thanks for shopping.!</h5>
 						</div>
 					</div>
@@ -116,10 +132,7 @@ if(isset($_SESSION['user_id'])){
 	</div>
 </div>
 <?php
-} }
-else{
-echo '<p class="empty">no orders placed yet!</p>';
-}
+
 ?>
 <style type="text/css">
 body{

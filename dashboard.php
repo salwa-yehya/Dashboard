@@ -8,43 +8,9 @@ $admin_id = $_SESSION['admin_id'];
 
 if(!isset($admin_id)){
    header('location:admin_login.php');
-};
+}
 
-if(isset($_POST['add_category'])){
-
-   $name = $_POST['name'];
-   $name = htmlspecialchars($name, ENT_QUOTES);
-
-   $image_01 = $_FILES['image_01']['name'];
-   $image_01 = htmlspecialchars($image_01, ENT_QUOTES);
-   $image_size_01 = $_FILES['image_01']['size'];
-   $image_tmp_name_01 = $_FILES['image_01']['tmp_name'];
-   $image_folder_01 = '../uploaded_img/'.$image_01;
-
-   $select_categorys = $conn->prepare("SELECT * FROM `category` WHERE category_name = ?");
-   $select_categorys->execute([$name]);
-
-   if($select_categorys->rowCount() > 0){
-      $message[] = 'category name already exist!';
-   }else{
-
-      $insert_categorys = $conn->prepare("INSERT INTO `category`(category_name, image_01) VALUES(?,?)");
-      $insert_categorys->execute([$name, $image_01]);
-
-      if($insert_categorys){
-         if($image_size_01 > 2000000){
-            $message[] = 'image size is too large!';
-         }else{
-            move_uploaded_file($image_tmp_name_01, $image_folder_01);
-            $message[] = 'new category added!';
-         }
-
-      }
-
-   }  
-
-};?>
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +45,8 @@ if(isset($_POST['add_category'])){
          }}
 		 ?>
 		<ul class="side-menu top">
-		<li >
+		<li class="active" >
+
 				<a href="dashboard.php">
 				<i class='bx bxs-cog' ></i>
 				<span class="text">Home</span>
@@ -87,18 +54,18 @@ if(isset($_POST['add_category'])){
 			</li>
 			<li >
 				<a href="order.php">
-				<i class='bx bxs-cog' ></i>
-				<span class="text">Orders</span>
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Orders</span>
 				</a>
 			</li>
-			
+		
 			<li>
 				<a href="product.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Product</span>
 				</a>
 			</li>
-            
+			
 			
 		<li>
 				<a href="category.php">
@@ -144,6 +111,7 @@ if(isset($_POST['add_category'])){
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu' ></i>
+			<!-- <i class="fa-solid fa-user"></i> -->
 			<!-- <input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label> -->
 			
@@ -151,55 +119,98 @@ if(isset($_POST['add_category'])){
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
+		<!-- MAIN -->
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Add Category</h1>
-				</div>	
-			</div>
-<!-- ______________________________ -->
-<section class="add-products">
-
-   <!-- <h1 class="heading">Add product</h1> -->
-   <?php
-   if(isset($message)){
-      foreach($message as $message){
-         echo '
-         <div class="messages">
-            <span>'.$message.'</span>
-			<i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-         </div>
-         ';
-      }
-   }
-?>
-   <form action="" method="post" enctype="multipart/form-data">
-      <div class="flex">
-         <div class="inputBox">
-            <span>Category name </span>
-            <input type="text" class="box" required maxlength="100" placeholder="enter product name" name="name">
-         </div>
-         
-        <div class="inputBox">
-            <span>Category image </span>
-            <input type="file" name="image_01" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
-        </div>
-      </div>
-      
-      <input type="submit" value="Add category" class="add-btn" name="add_category">
-   </form>
-
-</section>
-
-<!-- ______________________________ -->
+					<h1>Dashboard</h1>
 				</div>
-			
+				<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a>
+			</div>
+
+			<ul class="box-info">
+				<li>
+					<i class='bx bxs-calendar-check' ></i>
+					<span class="text">
+						<h3>1020</h3>
+						<p>New Order</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-group' ></i>
+					<span class="text">
+						<h3>2834</h3>
+						<p>Visitors</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-dollar-circle' ></i>
+					<span class="text">
+						<h3>$2543</h3>
+						<p>Total Sales</p>
+					</span>
+				</li>
+			</ul>
+
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Recent Orders</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>User</th>
+								<th>Date Order</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+						</tbody>
+					</table>
+				</div>
+				<div class="todo">
+					<div class="head">
+						<h3>Todos</h3>
+						<i class='bx bx-plus' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<ul class="todo-list">
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</main>
-		<!-- MAIN -->
-	</section>
-	<!-- CONTENT -->
 	
+	</section>
+
+
 
 	<script src="script.js"></script>
 </body>

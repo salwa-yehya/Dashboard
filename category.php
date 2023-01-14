@@ -42,7 +42,27 @@ if(isset($_SESSION['user_id'])){
 <body>
    
 <?php include 'components/user_header.php'; ?>
+<section class="category1">
 
+   <div class="header-shop">
+      <a href="shop.php"><h3 >PRODUCTS</h3></a>
+   <?php  $select_catogry =" SELECT * FROM category " ;
+      $X = $conn-> prepare($select_catogry);
+      $X -> execute();
+      while ($c = $X->fetch() ){
+      $category_id= $c['category_id'];
+      $category_name = $c['category_name'];
+   
+      ?>
+      <a href="category.php?category=<?php echo "$category_id" ?>" >
+          <h3><?php echo "$category_name" ?></h3>
+      </a>
+      
+      <?php } ?>
+      
+   
+   </div>
+   </section>
 <section class="products">
 
 <?php $cd =$_GET['category'] ;?>
@@ -79,9 +99,9 @@ if(isset($_SESSION['user_id'])){
 
       <?php if ($fetch_product['is_sale'] == 1){ ?>
 
-<div class="price"><span><del style="text-decoration:line-through; color:silver">$<?= $fetch_product['price']; ?></del><ins style="color:red; padding:20px 0px"> $<?=$fetch_product['price_discount'];?></ins></span></div>
+<div class="price"><span><del style="text-decoration:line-through; color:silver">JD<?= $fetch_product['price']; ?></del><ins style="color:red; padding:20px 0px"> JD<?=$fetch_product['price_discount'];?></ins></span></div>
 <?php } else { ?>
-   <div class="name" style="color:red;">$<?= $fetch_product['price']; ?></div> <?php } ?>         <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
+   <div class="name" style="color:red;">JD<?= $fetch_product['price']; ?></div> <?php } ?>         <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
       </div>
 
       <input type="submit" value="add to cart" class="btn" name="addTOcart">
