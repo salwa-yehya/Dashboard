@@ -80,7 +80,7 @@ if(isset($_POST['add_category'])){
 		 ?>
 		<ul class="side-menu top">
 			<li >
-				<a href="dashboard.php">
+				<a href="order.php">
 				<i class='bx bxs-cog' ></i>
 				<span class="text">Orders</span>
 				</a>
