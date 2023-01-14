@@ -46,7 +46,6 @@ if(!isset($admin_id)){
 		 ?>
 		<ul class="side-menu top">
 		<li class="active" >
-
 				<a href="dashboard.php">
 				<i class='bx bxs-cog' ></i>
 				<span class="text">Home</span>
@@ -119,7 +118,6 @@ if(!isset($admin_id)){
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
-		<!-- MAIN -->
 		<main>
 			<div class="head-title">
 				<div class="left">
@@ -173,7 +171,27 @@ if(!isset($admin_id)){
 						</thead>
 						<tbody>
 	
-
+						<tr>
+								<td>
+									
+									<p>Sama </p>
+								</td>
+								<td>07-01-2023</td>
+								<td><span class="status completed">Completed</span></td>
+							</tr>
+							<tr>
+								<td>
+									<p>Shahed</p>
+								</td>
+								<td>07-01-2023</td>
+								<td><span class="status process">Process</span></td>							</tr>
+							<tr>
+								<td>
+									<p>mohammad</p>
+								</td>
+								<td>07-01-2023</td>
+								<td><span class="status pending">Pending</span></td>
+							</tr>
  
 						</tbody>
 					</table>

@@ -62,8 +62,8 @@ if(isset($_GET['delete'])){
          }}
 		 ?>
 		<ul class="side-menu top">
-		<li >
-				<a href="dashboard.php">
+		<li class="active" >
+				<a href="dashboardd.php">
 				<i class='bx bxs-cog' ></i>
 				<span class="text">Home</span>
 				</a>
@@ -135,13 +135,18 @@ if(isset($_GET['delete'])){
 
 		<!-- MAIN -->
 		<main>
-			<div class="head-title">
+		<div class="head-title">
 				<div class="left">
 					<h1>Product</h1>
 				</div>
+				<a href="add_product.php" class="btn-download">
+				<i class="fa-solid fa-plus"></i>
+				<span class="text">Add New Product</span>
+				</a>
+			</div>
 <!-- ______________________________ -->
 
-<a href="add_product.php"><button class="add-btn">Add New Product</button></a>
+<!-- <a href="add_product.php"><button class="add-btn">Add New Product</button></a> -->
 
 			<div class="table-data">
 				<div class="order">
