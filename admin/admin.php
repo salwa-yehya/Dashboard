@@ -141,9 +141,7 @@ if(isset($_GET['delete'])){
 			<div class="table-data" style="width:65%;">
 				<div class="order" >
 					<div class="head">
-						<!-- <h3>Product</h3>
-						<i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i> -->
+					
 					</div>
 					<table >
 					<thead>

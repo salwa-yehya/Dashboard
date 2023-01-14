@@ -7,7 +7,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="style.css">
+    <title>Felux_Dashbord</title>
 
 </head>
 <body>
@@ -17,16 +23,7 @@
 			<i class='bx bxs-smile'></i>
 			<span class="text">FELUX</span>
 		</a>
-		<?php
-      $select_accounts = $conn->prepare("SELECT * FROM `admins` WHERE id = '$admin_id'");
-      $select_accounts->execute();
-      if($select_accounts->rowCount() > 0){
-         while($fetch_accounts = $select_accounts->fetch(PDO::FETCH_ASSOC)){   
-   ?>
-		<span class="text brand1" >Welcome ,<?= $fetch_accounts['name'] ?> </span>
-		<?php
-         }}
-		 ?>
+	
 		<ul class="side-menu top">
         <li class="active">
 				<a href="dashboardd.php">
@@ -40,12 +37,7 @@
 					<span class="text">Orders</span>
 				</a>
 			</li>
-			<!-- <li class="active" >
-				<a href="add_product.php">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Add Product</span>
-				</a>
-			</li> -->
+			
 			<li>
 				<a href="product.php">
 					<i class='bx bxs-cog' ></i>
@@ -53,12 +45,7 @@
 				</a>
 			</li>
            
-			<!-- <li>
-				<a href="add_category.php">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Add Category</span>
-				</a>
-			</li> -->
+			
 		 <li>
 				<a href="category.php">
 					<i class='bx bxs-cog' ></i>
@@ -95,9 +82,29 @@
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
-    <section class="update-product">
-        <h1 class="heading">Sale Form</h1> 
-        <form action="" method="post" enctype="multipart/form-data">
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<!-- <input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label> -->
+			
+		</nav>
+		<!-- NAVBAR -->
+			<!-- MAIN -->
+			<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Add Sale</h1>
+				</div>
+				
+			</div>
+
+<!-- ______________________________ -->
+
+    <section class="content">
+        <!-- <h1 class="heading">Sale Form</h1>  -->
             
           <?php  $id = $_GET['sale'];
 $select_products = $conn->prepare("SELECT * FROM `products` WHERE product_id='$id'");
@@ -106,16 +113,24 @@ $select_products = $conn->prepare("SELECT * FROM `products` WHERE product_id='$i
     $pro_name = $slect_pro['name'];
     $old_prise = $slect_pro['price'];
     ?>
-            <span><h4>Product Name : </h4></span><span><?= $pro_name; ?></span>
-            <br>
-            <span><h4>Original Product Price: </h4></span><span>JD<?= $old_prise; ?></span>
-            <br>
-            <br>
-            <span></span>
-            <input type="number" name="new_price" required class="box" placeholder="enter discount percentage">
+        <form action="" method="post" enctype="multipart/form-data">
+	
+            <span>product name </span>
+			<input type="text" name="name" required class="box" maxlength="100" value="<?= $pro_name; ?>" >
+<br><br>
+            <span>Original product price </span>
+			<input name="price" required class="box" value="JD<?= $old_prise; ?>">
+
+		<br><br>
+			<span>New price </span>
+			 <input type="number" name="new_price" required class="box" placeholder="Enter Discount Percentage">
+             
+        
+    
             <div class="flex-btn">
-                <input type="submit" name="update" class="btn" value="ADD">
-                <a href="product.php" class="option-btn">Go Gack</a>
+                <input type="submit" name="update" class="add-btn" value="ADD"><br><br>
+                <a href="product.php" class="back"><i class="fa-solid fa-arrow-left"></i>Go Back</a>
+
             </div>
         </form>
         
