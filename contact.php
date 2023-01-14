@@ -37,46 +37,55 @@ if (isset($_SESSION['user_id'])) {
 
    <?php include 'components/user_header.php'; ?>
    <div id="gitIN">
-      <h2 class="heading1" >Get In Touch</h2>
+      <h2 class="heading1">Get In Touch</h2>
       <br>
       <img src="images/zeena12.png" alt="" width="20%">
-            <!-- <img class="cimg" src="images/contactimg.png" alt=""> -->
+      <!-- <img class="cimg" src="images/contactimg.png" alt=""> -->
    </div>
    <br>
 
 
-   <section>
-      <div class="container-page">
+   <!-- <section> -->
 
 
+   <div class="allcontact">
+      <div class="pict">
+         <img src="./images/undraw_profile_data_re_v81r.svg" width="80%" alt="">
+      </div>
+      <div class="connee">
          <div class="adress details">
             <i class="fas fa-map-marker-alt conticon"></i>
             <br><br>
-            <div class="topic">Address</div>
-            <div class="text-one">Jorden</div>
+            <div class="textation">
+               <div class="topic">Address</div>
+               <div class="text-one">Jorden</div>
+            </div>
          </div>
-
-
-
          <div class="phone details">
             <i class="fas fa-phone-alt conticon"></i>
             <br><br>
-            <div class="topic">Phone</div>
-            <div class="text-one">0771234567</div>
+            <div class="textation">
+               <div class="topic">Phone</div>
+               <div class="text-one">0771234567</div>
+            </div>
          </div>
-
-
          <div class="email details">
             <i class="fas fa-envelope conticon"></i>
             <br><br>
-            <div class="topic">Email</div>
-            <div class="text-one">felux@gmail.com</div>
+            <div class="textation">
+               <div class="topic">Email</div>
+               <div class="text-one">felux@gmail.com</div>
+            </div>
          </div>
 
-
-
       </div>
-   </section>
+
+   </div>
+
+
+
+
+   <!-- </section> -->
    <!-- <section class="contact">
 
    <form action="" method="post">
