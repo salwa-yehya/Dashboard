@@ -8,43 +8,21 @@ $admin_id = $_SESSION['admin_id'];
 
 if(!isset($admin_id)){
    header('location:admin_login.php');
-};
+}
 
-if(isset($_POST['add_category'])){
+if(isset($_GET['delete'])){
+   $delete_id = $_GET['delete'];
+   $delete_user = $conn->prepare("DELETE FROM `users` WHERE user_id = ?");
+   $delete_user->execute([$delete_id]);
+   $delete_orders = $conn->prepare("DELETE FROM `orders` WHERE user_id = ?");
+   $delete_orders->execute([$delete_id]);
+   $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
+   $delete_cart->execute([$delete_id]);
+   
+   header('location:users.php');
+}
 
-   $name = $_POST['name'];
-   $name = htmlspecialchars($name, ENT_QUOTES);
-
-   $image_01 = $_FILES['image_01']['name'];
-   $image_01 = htmlspecialchars($image_01, ENT_QUOTES);
-   $image_size_01 = $_FILES['image_01']['size'];
-   $image_tmp_name_01 = $_FILES['image_01']['tmp_name'];
-   $image_folder_01 = '../uploaded_img/'.$image_01;
-
-   $select_categorys = $conn->prepare("SELECT * FROM `category` WHERE category_name = ?");
-   $select_categorys->execute([$name]);
-
-   if($select_categorys->rowCount() > 0){
-      $message[] = 'category name already exist!';
-   }else{
-
-      $insert_categorys = $conn->prepare("INSERT INTO `category`(category_name, image_01) VALUES(?,?)");
-      $insert_categorys->execute([$name, $image_01]);
-
-      if($insert_categorys){
-         if($image_size_01 > 2000000){
-            $message[] = 'image size is too large!';
-         }else{
-            move_uploaded_file($image_tmp_name_01, $image_folder_01);
-            $message[] = 'new category added!';
-         }
-
-      }
-
-   }  
-
-};?>
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +44,7 @@ if(isset($_POST['add_category'])){
 	<section id="sidebar">
 		<a href="dashboard.php" class="brand">
 			<i class='bx bxs-smile'></i>
-			<span class="text">FELUX</span>
+			<span class="text text2">FELUX</span>
 		</a>
 		<?php
       $select_accounts = $conn->prepare("SELECT * FROM `admins` WHERE id = '$admin_id'");
@@ -79,16 +57,10 @@ if(isset($_POST['add_category'])){
          }}
 		 ?>
 		<ul class="side-menu top">
-		<li >
-				<a href="dashboard.php">
-				<i class='bx bxs-cog' ></i>
-				<span class="text">Home</span>
-				</a>
-			</li>
 			<li >
-				<a href="order.php">
-				<i class='bx bxs-cog' ></i>
-				<span class="text">Orders</span>
+				<a href="dashboard.php">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Orders</span>
 				</a>
 			</li>
 			
@@ -98,21 +70,19 @@ if(isset($_POST['add_category'])){
 					<span class="text">Product</span>
 				</a>
 			</li>
-            
-			
 		<li>
 				<a href="category.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Category</span>
 				</a>
 			</li>
-			<li>
-			<a href="users.php">
+			<li >
+				<a href="users.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Users</span>
 				</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="admin.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Admins</span>
@@ -128,7 +98,7 @@ if(isset($_POST['add_category'])){
 		
 			<ul class="side-menu">
 			<li>
-				<a href="../components/admin_logout.php" class="logout">
+				<a href="#" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span class="text">Logout</span>
 				</a>
@@ -154,44 +124,49 @@ if(isset($_POST['add_category'])){
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Add Category</h1>
-				</div>	
+					<h1>Admins</h1>
+				</div>
+				
 			</div>
 <!-- ______________________________ -->
-<section class="add-products">
-
-   <!-- <h1 class="heading">Add product</h1> -->
-   <?php
-   if(isset($message)){
-      foreach($message as $message){
-         echo '
-         <div class="messages">
-            <span>'.$message.'</span>
-			<i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-         </div>
-         ';
-      }
-   }
-?>
-   <form action="" method="post" enctype="multipart/form-data">
-      <div class="flex">
-         <div class="inputBox">
-            <span>Category name </span>
-            <input type="text" class="box" required maxlength="100" placeholder="enter product name" name="name">
-         </div>
-         
-        <div class="inputBox">
-            <span>Category image </span>
-            <input type="file" name="image_01" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
-        </div>
-      </div>
+<a href="add_new_admin.php"><button class="add-btn">Add New Admin</button></a>
+			<div class="table-data" style="width:65%;">
+				<div class="order" >
+					<div class="head">
+						<!-- <h3>Product</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i> -->
+					</div>
+					<table >
+					<thead>
+					<tr>
+                    <th >Admin id</th>   
+					<th >Name Admin</th>	
+					
+					</tr>
+				</thead>
+						<tbody>
+						<?php
+      $select_accounts = $conn->prepare("SELECT * FROM `admins`");
+      $select_accounts->execute();
+      if($select_accounts->rowCount() > 0){
+         while($fetch_accounts = $select_accounts->fetch(PDO::FETCH_ASSOC)){   
+   ?>
+    <tr>
+      <th scope="row"><?= $fetch_accounts['id']; ?></th>
+      <td><?= $fetch_accounts['name']; ?></td>
       
-      <input type="submit" value="Add category" class="add-btn" name="add_category">
-   </form>
-
-</section>
-
-<!-- ______________________________ -->
+    </tr>
+    <?php
+         }
+      }else{
+         echo '<p class="empty">no accounts available!</p>';
+      }
+   ?>
+						
+						</tbody>
+					</table>
+	<!-- ______________________________ -->
 				</div>
 			
 			</div>
@@ -199,7 +174,18 @@ if(isset($_POST['add_category'])){
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
-	
+	<?php
+   if(isset($message)){
+      foreach($message as $message){
+         echo '
+         <div>
+            <span>'.$message.'</span>
+            <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+         </div>
+         ';
+      }
+   }
+?>
 
 	<script src="script.js"></script>
 </body>

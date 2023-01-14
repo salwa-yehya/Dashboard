@@ -82,9 +82,12 @@ if(isset($_POST['update_qty'])){
 
          <div class="price"><span style="display: flex; flex-direction: row;"><del style="text-decoration:line-through; color:silver"><?= $fetch_product['price']; ?>JD</del><ins style="color:red;"> <?=$fetch_product['price_discount'];?>JD</ins> </span></div>
 
-         <?php } else { ?>
-
-         <div class="name" style="color:red; padding:20px 0px"><?= $fetch_product['price']; ?></div> <?php } ?>
+         <?php } 
+         else { ?>
+<!-- _________ -->
+         <div class="name" style="color:red; padding:20px 0px"><?= "JD".$fetch_product['price']; ?></div> 
+         <?php } ?>
+<!-- _________ -->
 
          <?php if ($fetch_product['category_id'] != '1'){?>
 
@@ -94,7 +97,7 @@ if(isset($_POST['update_qty'])){
          <input type="hidden" name="quantity" value="1">
          <?php } } } ?> 
    </div>
-   <div class="sub-total"> Sub Total : <span>$<?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?></span> </div>
+   <div class="sub-total"> Sub Total : <span>JD<?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?></span> </div>
    <input type="submit" value="delete item" onclick="return confirm('delete this from cart?');" class="delete-btn" name="delete">
          </div>
 </form>
@@ -109,7 +112,7 @@ $total_price += $sub_total;
 </div>
 
 <div class="cart-total">
-   <p>Total Price : <span>$<?= $total_price; ?></span></p>
+   <p>Total Price : <span>JD<?= $total_price; ?></span></p>
    <a href="shop.php" class="option-btn">continue shopping</a>
    <a href="cart.php?delete_all" class="delete-btn <?= ($total_price > 1)?'':'disabled'; ?>" onclick="return confirm('delete all from cart?');">delete all item</a>
    <a href="checkout.php" class="btn <?= ($total_price > 1)?'':'disabled'; ?>">proceed to checkout</a>

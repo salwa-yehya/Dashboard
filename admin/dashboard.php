@@ -58,12 +58,7 @@ if(!isset($admin_id)){
 					<span class="text">Orders</span>
 				</a>
 			</li>
-			<!-- <li>
-				<a href="add_product.php">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Add Product</span>
-				</a>
-			</li> -->
+		
 			<li>
 				<a href="product.php">
 					<i class='bx bxs-cog' ></i>
@@ -71,12 +66,7 @@ if(!isset($admin_id)){
 				</a>
 			</li>
 			
-			<!-- <li>
-				<a href="add_category.php">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Add Category</span>
-				</a>
-			</li> -->
+			
 		<li>
 				<a href="category.php">
 					<i class='bx bxs-cog' ></i>
@@ -90,9 +80,9 @@ if(!isset($admin_id)){
 				</a>
 			</li>
 			<li>
-				<a href="add_new_admin.php">
+				<a href="admin.php">
 					<i class='bx bxs-cog' ></i>
-					<span class="text">Add New Admin</span>
+					<span class="text">Admins</span>
 				</a>
 			</li>
 			<li>

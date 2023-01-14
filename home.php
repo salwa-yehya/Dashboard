@@ -11,18 +11,35 @@ if (isset($_SESSION['user_id'])) {
 };
 
 ?>
+
+<?php             
+?>
 <!-- _______addTOcart__________ -->
-<?php if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])) {
+<?php 
+if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])) {
    $product_id = $_POST['product_id'];
    $product_name = $_POST['name'];
    $product_price = $_POST['price'];
    $product_image = $_POST['image'];
    $product_quantity = $_POST['qty'];
-
-   $send_to_cart = $conn->prepare("INSERT INTO `cart` (user_id , pid , name , price , image , quantity)
+   
+$select_cart = $conn->prepare("SELECT * FROM cart where pid=$product_id");
+ 
+            $select_cart->execute();
+   $data = $select_cart->fetchAll(PDO::FETCH_ASSOC);
+   if ($data) {
+    $qq = $data[0]['quantity'];
+      $q_u = $qq + 1;
+   $xx = $conn->prepare("UPDATE cart set quantity='$q_u'
+   WHERE pid='$product_id'");
+$xx->execute();
+ }else{
+        $send_to_cart = $conn->prepare("INSERT INTO `cart` (user_id , pid , name , price , image , quantity)
                                     VALUES (? , ? , ? , ?, ? , ?)");
    $send_to_cart->execute([$user_id, $product_id, $product_name, $product_price, $product_image, $product_quantity]);
-} ?>
+
+}
+}?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -157,11 +174,11 @@ if (isset($_SESSION['user_id'])) {
                      <div class="flex">
                         <?php if ($fetch_product['is_sale'] == 1) { ?>
 
-                           <div class="price"><span><del style="text-decoration:line-through; color:silver">$<?= $fetch_product['price']; ?></del><ins style="color:red; padding:20px 0px"> $<?= $fetch_product['price_discount']; ?></ins> </span></div>
+                           <div class="price"><span><del style="text-decoration:line-through; color:silver">JD<?= $fetch_product['price']; ?></del><ins style="color:red; padding:20px 0px"> JD<?= $fetch_product['price_discount']; ?></ins> </span></div>
 
                         <?php } else { ?>
 
-                           <div class="name" style="color:red;">$<?= $fetch_product['price']; ?></div> <?php } ?>
+                           <div class="name" style="color:red;">JD<?= $fetch_product['price']; ?></div> <?php } ?>
                         <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
                      </div>
                      <input type="submit" value="add to cart" class="btn" name="addTOcart">

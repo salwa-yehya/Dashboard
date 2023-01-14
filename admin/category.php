@@ -70,12 +70,6 @@ if(isset($_GET['delete'])){
 					<span class="text">Orders</span>
 				</a>
 			</li>
-			<!-- <li>
-				<a href="add_product.php">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Add Product</span>
-				</a>
-			</li> -->
 			<li>
 				<a href="product.php">
 					<i class='bx bxs-cog' ></i>
@@ -83,12 +77,7 @@ if(isset($_GET['delete'])){
 				</a>
 			</li>
 			
-			<!-- <li>
-				<a href="add_category.php">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Add Category</span>
-				</a>
-			</li> -->
+			
 		<li class="active">
 				<a href="category.php">
 					<i class='bx bxs-cog' ></i>
@@ -102,9 +91,9 @@ if(isset($_GET['delete'])){
 				</a>
 			</li>
 			<li>
-				<a href="add_new_admin.php">
+				<a href="admin.php">
 					<i class='bx bxs-cog' ></i>
-					<span class="text">Add New Admin</span>
+					<span class="text">Admins</span>
 				</a>
 			</li>
 			<li>
@@ -147,6 +136,7 @@ if(isset($_GET['delete'])){
 				</div>
 		<!-- _____________ -->
 
+<a href="add_category.php"><button class="add-btn">Add New Category</button></a>
 
 			<div class="table-data">
 				<div class="order">
@@ -155,8 +145,11 @@ if(isset($_GET['delete'])){
 					<tr>
 					<th >Image</th>
 					<th >Name</th>
+					<th >Add Sale</th>
+					<th >Remove Sale</th>
 					<th >Edit</th>
 					<th >Delete</th>
+
 					</tr>
 				</thead>
 						<tbody>
@@ -169,6 +162,12 @@ if(isset($_GET['delete'])){
     <tr>
       <th scope="row"><img src="../uploaded_img/<?= $fetch_categorys['image_01']; ?>" width="90px" alt=""></th>
       <td><?= $fetch_categorys['category_name']; ?></td>
+	  <!-- ____________ -->
+
+	  <td style="text-align:center;"><a style="color:green;" href="add_sale_category.php?sale_id_category=<?= $fetch_categorys['category_id']; ?>"><i class="fa-solid fa-square-plus"></i></a></td>
+      <td style="text-align:center;"> <a href="remove_sale_category.php?removeSale=<?= $fetch_categorys['category_id']; ?>"><i class="fa-solid fa-square-minus delete1"></i></a></td>
+
+	  <!-- ____________ -->
       <td style="text-align:center;"><a class="editbtn" href="update_category.php?update=<?= $fetch_categorys['category_id']; ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
       <td style="text-align:center;"><a href="category.php?delete=<?= $fetch_categorys['category_id']; ?>" onclick="return confirm('delete this category?');"><i class="fa-solid fa-trash delete1"></a></td>
     </tr>
