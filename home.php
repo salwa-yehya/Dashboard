@@ -58,7 +58,7 @@ $xx->execute();
 
    <!-- custom css file link  -->
    <script src="https://kit.fontawesome.com/98bf175dbe.js" crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="./css/homnav.css">
+   <link rel="stylesheet" href="css/homnav.css">
 
 </head>
 
@@ -96,7 +96,9 @@ $xx->execute();
       </section>
 
    </div>
-
+<div>
+   
+</div>
 
    <section class="category1">
 
@@ -209,7 +211,7 @@ $xx->execute();
 
       <div class="swiper-slide slide">
          <div class="image">
-            <img src="images/brand1-removebg-preview.png" alt="" width="50" height="50">
+            <img src="images/brand1-removebg-preview.png" alt="" width="20">
          </div>
          <!-- <div class="content">
             <span>upto 50% off</span>
@@ -220,7 +222,7 @@ $xx->execute();
 
       <div class="swiper-slide slide">
          <div class="image">
-            <img src="images/brand3-removebg-preview.png"  alt="" width="50" height="50">
+            <img src="images/brand3-removebg-preview.png"  alt="" width="20">
          </div>
          <!-- <div class="content">
             <span>upto 50% off</span>
@@ -231,7 +233,7 @@ $xx->execute();
 
       <div class="swiper-slide slide">
          <div class="image">
-            <img src="images/brand4-removebg-preview.png"   alt="" width="50" height="50">
+            <img src="images/brand4-removebg-preview.png"   alt="" width="20">
          </div>
          <!-- <div class="content">
             <span>upto 50% off</span>
@@ -242,7 +244,7 @@ $xx->execute();
 
       <div class="swiper-slide slide">
          <div class="image">
-            <img src="images/brand5-removebg-preview.png"   alt="" width="50" height="50">
+            <img src="images/brand5-removebg-preview.png"   alt="" width="20">
          </div>
          <!-- <div class="content">
             <span>upto 50% off</span>
@@ -253,7 +255,7 @@ $xx->execute();
 
       <div class="swiper-slide slide">
          <div class="image">
-            <img src="images/brand6-removebg-preview.png"   alt="" width="50" height="50">
+            <img src="images/brand6-removebg-preview.png"   alt="" width="20">
          </div>
          <!-- <div class="content">
             <span>upto 50% off</span>
@@ -264,7 +266,7 @@ $xx->execute();
 
       <div class="swiper-slide slide">
          <div class="image">
-            <img src="images/brand7-removebg-preview.png"   alt="" width="50" height="50">
+            <img src="images/brand7-removebg-preview.png"   alt="" width="20">
          </div>
          <!-- <div class="content">
             <span>upto 50% off</span>
