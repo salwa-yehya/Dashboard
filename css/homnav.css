@@ -184,18 +184,7 @@ section{
    min-width: 100%;
    min-height: 50%;
    z-index: -1;
-  
-   
 }
-
-/* .layarsheaders{
-   position: relative;
-   
-}
-#layarsheaders{
-   position: absolute;
-
-} */
 .header-for{
       position: fixed;
    top:0; left:0; right:0;
@@ -208,7 +197,7 @@ section{
    /* border:10px solid ; */
    /* border-color: */
    /* border-block-start: 2px solid; */
-   
+
 }
 
 /* //////////scroll /////////////*/
@@ -220,7 +209,12 @@ section{
    box-shadow: 0 0 .8rem rgba(0, 0, 0, .6);
 }
 
-
+.active .navbar a:hover{
+   color: var(--main-color);
+}
+.navbar a:hover{
+   color: var(--main-color);
+}
 /* ////////////////////////////// */
 
 
@@ -249,8 +243,8 @@ section{
   
 }
 
-.header-for .flex .navbar a:hover{
-   color:var(--light-bg);
+.header .flex .navbar a:hover{
+   color:var(--main-color) !important;
    list-style:none ;
 }
 

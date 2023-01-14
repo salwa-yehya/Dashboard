@@ -4,9 +4,9 @@ include 'components/connect.php';
 
 session_start();
 
-if(isset($_SESSION['user_id'])){
+if (isset($_SESSION['user_id'])) {
    $user_id = $_SESSION['user_id'];
-}else{
+} else {
    $user_id = '';
 };
 
@@ -16,65 +16,68 @@ if(isset($_SESSION['user_id'])){
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>contact</title>
-   
+
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="./css/style.css">
    <link rel="stylesheet" href="./css/contact.css">
+   <link rel="stylesheet" href="./css/style.css">
 
 
 </head>
-<body>
-   
-<?php include 'components/user_header.php'; ?>
-<section>
-<h2 class="heading">Get In Touch</h2>
-<br>
-<img class="cimg" src="images/contactimg.png" alt="">
-</section>
-<br>
+
+<body class="copmp">
+
+   <?php include 'components/user_header.php'; ?>
+   <div id="gitIN">
+      <h2 class="heading1" >Get In Touch</h2>
+      <br>
+      <img src="images/zeena12.png" alt="" width="20%">
+            <!-- <img class="cimg" src="images/contactimg.png" alt=""> -->
+   </div>
+   <br>
 
 
-<section >
-<div class="container-page">
-   
-   
+   <section>
+      <div class="container-page">
+
+
          <div class="adress details">
-         <i class="fas fa-map-marker-alt conticon"></i>
-         <br><br>
-         <div class="topic">Address</div> 
-         <div class="text-one">Jorden</div>
+            <i class="fas fa-map-marker-alt conticon"></i>
+            <br><br>
+            <div class="topic">Address</div>
+            <div class="text-one">Jorden</div>
          </div>
 
 
 
          <div class="phone details">
-         <i class="fas fa-phone-alt conticon"></i>
-         <br><br>
-         <div class="topic">Phone</div> 
-         <div class="text-one">0771234567</div>
+            <i class="fas fa-phone-alt conticon"></i>
+            <br><br>
+            <div class="topic">Phone</div>
+            <div class="text-one">0771234567</div>
          </div>
 
 
          <div class="email details">
-         <i class="fas fa-envelope conticon"></i>
-         <br><br>
-         <div class="topic">Email</div> 
-         <div class="text-one">felux@gmail.com</div>
-         </div> 
-    
-      
-   
-</div>
-</section>
-<!-- <section class="contact">
+            <i class="fas fa-envelope conticon"></i>
+            <br><br>
+            <div class="topic">Email</div>
+            <div class="text-one">felux@gmail.com</div>
+         </div>
+
+
+
+      </div>
+   </section>
+   <!-- <section class="contact">
 
    <form action="" method="post">
       <h3>get in touch</h3>
@@ -99,9 +102,10 @@ if(isset($_SESSION['user_id'])){
 
 
 
-<?php include 'components/footer.php'; ?>
+   <?php include 'components/footer.php'; ?>
 
-<script src="js/script.js"></script>
+   <script src="js/script.js"></script>
 
 </body>
+
 </html>

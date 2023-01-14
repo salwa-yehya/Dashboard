@@ -228,8 +228,8 @@ section{
 }
 
 .header .flex .navbar a:hover{
-   color:var(--light-bg);
-   list-style:none ;
+   color:var(--main-color);
+   list-style:none;
 }
 
 
@@ -241,7 +241,7 @@ section{
 }
 
 .header .flex .icons > *:hover{
-   color:var(--light-bg);
+   color:var(--main-color);
 }
 
 .header .flex .icons a span{
@@ -665,7 +665,7 @@ section{
    background-color: var(--white);
    box-shadow: var(--box-shadow); */
    margin-top: 1rem;
-   width: 50%;
+   width: 40%;
 
 }
 .com {
@@ -684,7 +684,7 @@ section{
 
 #uscom{
    text-transform: capitalize;
-   font-size:xx-large;
+   font-size:large;
    padding-top: 2%;
    padding-left: 2%;
    /* border-bottom: #7d7d7d70 solid 1px; */
@@ -700,7 +700,7 @@ section{
 }
 #textcom{
    text-transform: capitalize;
-   font-size:large;
+   font-size:medium;
    padding-top: 2%;
    padding-left: 2%;
    padding-bottom: 4%;
@@ -749,6 +749,10 @@ section{
    transform: scale(1.1);
    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 } 
+
+.header-shop h3 a:focus{
+   color:var(--main-color);
+}
 
 .products .box-container .box{
    position: relative;
@@ -1307,3 +1311,17 @@ background-image: overlay;
       width: 15rem !important;
    }  
    }
+/* LINEAR-GRADIENT(TO RIGHT, #bf943fa5, #fcf6baa9, #b5904277, #fbf5b7bd, #aa761c8e), */
+   #gitIN{
+      background:LINEAR-GRADIENT(TO bottom, #bf943fa5, #fbf5b7bd, #eee),
+      url(../images/stras22.jpg) no-repeat center left / cover;
+   margin:0 auto;
+   padding:4rem;
+   text-align: center !important
+  }
+  .heading1{
+   font-size: 5rem;
+    color: black;
+    text-align: center;
+    text-transform: capitalize;
+  }
