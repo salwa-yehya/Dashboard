@@ -172,46 +172,7 @@ if(!isset($admin_id)){
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>
-									
-									<p>Mohammad</p>
-								</td>
-								<td>07-01-2023</td>
-								<td><span class="status completed">Completed</span></td>
-							</tr>
-							<tr>
-								<td>
-									
-									<p>Bayan</p>
-								</td>
-								<td>07-01-2023</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									
-									<p>Shahed</p>
-								</td>
-								<td>07-01-2023</td>
-								<td><span class="status process">Process</span></td>
-							</tr>
-							<tr>
-								<td>
-									
-									<p>Sama</p>
-								</td>
-								<td>07-01-2023</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									
-									<p>Hussien</p>
-								</td>
-								<td>07-01-2023</td>
-								<td><span class="status completed">Completed</span></td>
-							</tr>
+						
 						</tbody>
 					</table>
 				</div>
@@ -246,23 +207,10 @@ if(!isset($admin_id)){
 				</div>
 			</div>
 		</main>
-		<!-- MAIN -->
-		<!-- MAIN -->
-	</section>
-	<!-- CONTENT -->
-	<?php
-   if(isset($message)){
-      foreach($message as $message){
-         echo '
-         <div >
-            <span>'.$message.'</span>
-            <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-         </div>
-         ';
-      }
-   }
-?>
 	
+	</section>
+
+
 
 	<script src="script.js"></script>
 </body>

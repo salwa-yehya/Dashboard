@@ -32,7 +32,7 @@ $select_user= $user->fetch(PDO::FETCH_ASSOC);
 // _______________________________
 $lastOrder=$_SESSION['last_order'];
 $sql="SELECT
-order_details.name,order_details.price,order_details.quantity,
+order_details.NameProduct,order_details.price,order_details.quantity,
 orders.total_price,orders.location,orders.order_time,orders.total_quantity,orders.number,orders.email
 FROM order_details INNER JOIN orders
 ON order_details.order_id=orders.order_id
@@ -97,7 +97,7 @@ $data= $db->fetchAll(PDO::FETCH_ASSOC);
                     <tbody>
 				<?php	foreach ($data as $value) {?>
                         <tr>
-                            <td class="col-md-9"><?= $value['name']; ?></td>
+                            <td class="col-md-9"><?= $value['NameProduct']; ?></td>
                           
 							<td class="col-md-3"><i class="fa fa-inr"></i> <?= $value['quantity']; ?></td>  
 							<td class="col-md-3"><i class="fa fa-inr"></i> <?= " JD".$value['price']; ?></td>

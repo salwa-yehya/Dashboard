@@ -45,37 +45,22 @@ if(!isset($admin_id)){
          }}
 		 ?>
 		<ul class="side-menu top">
-        <li >
-				<a href="dashboard.php">
-				<i class='bx bxs-cog' ></i>
-				<span class="text">Home</span>
-				</a>
-			</li>
+			
 			<li class="active">
 				<a href="order.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Orders</span>
 				</a>
 			</li>
-			<!-- <li>
-				<a href="add_product.php">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Add Product</span>
-				</a>
-			</li> -->
+		
 			<li>
 				<a href="product.php">
 					<i class='bx bxs-cog' ></i>
 					<span class="text">Product</span>
 				</a>
 			</li>
-<!-- 			
-			<li>
-				<a href="add_category.php">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Add Category</span>
-				</a>
-			</li> -->
+			
+			
 		<li>
 				<a href="category.php">
 					<i class='bx bxs-cog' ></i>
@@ -89,9 +74,9 @@ if(!isset($admin_id)){
 				</a>
 			</li>
 			<li>
-				<a href="add_new_admin.php">
+				<a href="admin.php">
 					<i class='bx bxs-cog' ></i>
-					<span class="text">Add New Admin</span>
+					<span class="text">Admins</span>
 				</a>
 			</li>
 			<li>
@@ -151,36 +136,51 @@ if(!isset($admin_id)){
 					<th >Name</th>	
 					<th >Number</th>
 					<th >Email</th>
-					<th >Total Products</th>
-					<th >Total Price</th>
-					<th >Order_Time</th>
 					<th >Location</th>
+					<th >NameProduct</th>
+					<th >Order_Time</th>
+					<th >Quantity</th>
+					<th >Price</th>
+					
+
+					
 					</tr>
 				</thead>
 						<tbody>
 						<?php $select_orders = $conn->prepare("SELECT * 
                                        FROM `orders`
                                        INNER JOIN `users` ON Orders.user_id = users.user_id;");
-      $select_orders->execute();
-      if($select_orders->rowCount() > 0){
-         while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
+//______________
+$sql="SELECT
+order_details.NameProduct,order_details.price,order_details.quantity,order_details.NameUser,
+orders.location,orders.order_time,orders.total_quantity,orders.number,orders.email
+FROM order_details INNER JOIN orders
+ON order_details.order_id=orders.order_id
+";
+$db=$conn->prepare($sql);
+$db->execute();
+$data= $db->fetchAll(PDO::FETCH_ASSOC);
+foreach ($data as $value){
+							
+						
+
+									// _________________
+     
    ?>
     <tr>
       
-      <td><?= $fetch_orders['name']; ?></td>
-      <td><?= $fetch_orders['number']; ?></td>
-      <td><?= $fetch_orders['email']; ?></td>
-      <td><?= $fetch_orders['total_quantity']; ?></td>
-      <td>JD<?= $fetch_orders['total_price']; ?></td>
-      <td><?= $fetch_orders['order_time']; ?></td>
-	  <td><?= $fetch_orders['location']; ?></td>
+      <td><?= $value['NameUser']; ?></td>
+      <td><?=$value['number']; ?></td>
+      <td><?= $value['email']; ?></td>
+	  <td><?= $value['location']; ?></td>
+      <td><?= $value['NameProduct']; ?></td>
+      <td><?= $value['order_time']; ?></td>
+      <td><?= $value['quantity']; ?></td>
+	  <td>JD<?= $value['price']; ?></td>
     </tr>
 
     <?php
-         }
-      }else{
-         echo '<p class="empty">no orders placed yet!</p>';
-      }
+  }
    ?>
 						</tbody>
 					</table>
