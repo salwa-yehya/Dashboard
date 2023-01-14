@@ -1325,3 +1325,55 @@ background-image: overlay;
     text-align: center;
     text-transform: capitalize;
   }
+  .allcontact{
+   display: flex;
+  }
+  .textation{
+     flex-direction: column;
+     padding: 1rem;
+     /* margin-top: -50px; */
+   }
+   .adress{
+    display: flex;
+    align-items: center;
+   }
+   .phone{
+      display: flex;
+      align-items: center;
+   }
+   .email{
+      display: flex;
+      align-items: center;
+  }
+
+  .connee{
+padding-top: 10rem;
+  }
+  #abotUs{
+   background:LINEAR-GRADIENT(TO bottom, #bf793fae, #fbf5b7bd, #eee),
+      url(../images/aboutim.jpg) no-repeat center left / cover;
+   margin:0 auto;
+   padding:4rem;
+   text-align: center !important;
+   color: #7d7d7d;
+  }
+
+
+.about{
+   padding: 5%;
+     display:flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: row;
+  }
+  #imagabout{
+   box-shadow:
+   50px 50px 0 -40px var(--main-color),
+   -50px -50px 0 -40px var(--main-color);
+   border-radius: .5rem;
+
+}
+.p1{
+   padding-right: 2%;
+}
+  

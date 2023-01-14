@@ -59,6 +59,7 @@ $xx->execute();
    <!-- custom css file link  -->
    <script src="https://kit.fontawesome.com/98bf175dbe.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="css/homnav.css">
+   <link rel="icon" href="images/logo3.png">
 
 </head>
 
