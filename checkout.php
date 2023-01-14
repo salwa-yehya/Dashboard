@@ -10,7 +10,18 @@ if(isset($_SESSION['user_id'])){
    $user_id = '';
    header('location:user_login.php');
 };
+// ________nameuser________
 
+$select_accounts = $conn->prepare("SELECT * FROM `users` WHERE user_id  = '$user_id'");
+$select_accounts->execute();
+if($select_accounts->rowCount() > 0){
+   while($fetch_accounts = $select_accounts->fetch(PDO::FETCH_ASSOC)){
+      $NameUser=$fetch_accounts['name'];
+
+   }}
+ ?>
+ <!-- _______________________ -->
+ <?php
 if (isset($_POST['order'])) {
 
    $number = $_POST['number'];
@@ -63,8 +74,9 @@ if($value['is_sale']==0){
         
          $quantity = $value['quantity'];
          $name_pro = $value['name'];
-         $sql = "INSERT INTO order_details (order_id, product_id, quantity, price,name) 
-        VALUES ('$last_id', '$id', '$quantity', '$price','$name_pro')";
+
+         $sql = "INSERT INTO order_details (order_id, product_id, quantity, price,NameProduct,NameUser) 
+        VALUES ('$last_id', '$id', '$quantity', '$price','$name_pro','$NameUser')";
          $insert = $conn->prepare($sql);
          $insert->execute();
 
