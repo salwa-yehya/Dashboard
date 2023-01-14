@@ -31,7 +31,7 @@ $select_products = $conn->prepare("SELECT * FROM `products` WHERE product_id='$i
             <input type="number" name="new_price" required class="box" placeholder="enter discount percentage">
             <div class="flex-btn">
                 <input type="submit" name="update" class="btn" value="ADD">
-                <a href="sales.php" class="option-btn">Go Gack</a>
+                <a href="product.php" class="option-btn">Go Gack</a>
             </div>
         </form>
         
