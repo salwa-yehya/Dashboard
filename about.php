@@ -49,14 +49,14 @@ if (isset($_SESSION['user_id'])) {
 
    <section class="about">
       <p class="p1">Since 1895, founder Daniel mastery of crystal cutting has defined the company. His enduring passion for innovation and design has made it the world’s premier jewelry and accessory brand. Today, the family carries on the tradition of delivering extraordinary everyday style to women around the world. </p>
-      <img src="images/aboutim11.jpg" width="40%" id="imagabout" alt="">
+      <img src="images/aboutim11.jpg" width="40%" id="imagabout1" alt="">
    </section>
 
    <section class="about">
-      <div class="row">
+      <div class="row" id="sect2">
 
-         <div class="image">
-            <img src="images/aboutim55.jpg" alt="">
+         <div class="image" id="imagea">
+            <img src="images/aboutim55.jpg" id="imagabout2" alt="">
          </div>
 
          <div class="content">
@@ -69,9 +69,10 @@ if (isset($_SESSION['user_id'])) {
 
       </div>
    </section>
+
    <section class="reviews">
 
-      </div> -->
+      </div> 
 
    </section>
 
