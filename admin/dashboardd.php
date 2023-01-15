@@ -151,7 +151,7 @@ if(!isset($admin_id)){
 					
 					<span class="text">
 						<h3><?= $number_of_users; ?></h3>
-						<p>normal users</p>
+						<p>Number of users</p>
 					</span>
 				</li>
 				<!-- ______________________________ -->

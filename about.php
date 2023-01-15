@@ -19,7 +19,7 @@ if (isset($_SESSION['user_id'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>about</title>
+   <title>FELUX</title>
 
    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
@@ -28,6 +28,7 @@ if (isset($_SESSION['user_id'])) {
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="./css/style.css">
+   <link rel="icon" href="images/logo3.png">
    <style>
       .p1 {
          font-size: 2rem;
