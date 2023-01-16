@@ -46,7 +46,7 @@ if(!isset($admin_id)){
 		 ?>
 		<ul class="side-menu top">
 		<li class="active" >
-				<a href="dashboard.php">
+				<a href="dashboardd.php">
 				<i class='bx bxs-cog' ></i>
 				<span class="text">Home</span>
 				</a>

@@ -142,8 +142,8 @@ if(!isset($admin_id)){
 					<th style="font-size: 17px;width: 20rem;">Number</th>
 					<th style="font-size: 17px;width: 20rem;">Email</th>
 					<th style="font-size: 17px;width: 20rem;">Location</th>
-					<th style="font-size: 17px;width: 20rem;">NameProduct</th>
-					<th style="font-size: 17px;width: 20rem;">Order_Time</th>
+					<th style="font-size: 17px;width: 20rem;">Name Product</th>
+					<th style="font-size: 17px;width: 20rem;">Order Time</th>
 					<th style="font-size: 17px;width: 20rem;">Quantity</th>
 					<th style="font-size: 17px;width: 20rem;">Price</th>
 					
