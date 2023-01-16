@@ -38,11 +38,11 @@ if(isset($_POST['update_qty'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>shopping cart</title>
+   <title>FELUX</title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
    <link rel="stylesheet" href="css/style.css">
-
+   <link rel="icon" href="images/logo3.png">
 </head>
 <body>
    
@@ -50,7 +50,7 @@ if(isset($_POST['update_qty'])){
 
 <section class="products shopping-cart">
 
-<h3 class="heading">shopping cart</h3>
+<h3 class="heading">Shopping Cart</h3>
 
 <div class="box-container cartContainer">
 
@@ -89,7 +89,7 @@ if(isset($_POST['update_qty'])){
          <?php } ?>
 <!-- _________ -->
 
-         <?php if ($fetch_product['category_id'] != '1'){?>
+         <?php if ($fetch_product['category_id'] != '100'){?>
 
          <input type="number" name="quantity" class="qty" min="1" max="99" value="<?=$fetch_cart['quantity'];?>">
          <button type="submit" class="fas fa-solid fa-square-check" style="font-size:40px;background-color:none; color:#d39638;" name="update_qty"></button>
@@ -113,9 +113,10 @@ $total_price += $sub_total;
 
 <div class="cart-total">
    <p>Total Price : <span>JD<?= $total_price; ?></span></p>
-   <a href="shop.php" class="option-btn">continue shopping</a>
-   <a href="cart.php?delete_all" class="delete-btn <?= ($total_price > 1)?'':'disabled'; ?>" onclick="return confirm('delete all from cart?');">delete all item</a>
-   <a href="checkout.php" class="btn <?= ($total_price > 1)?'':'disabled'; ?>">proceed to checkout</a>
+  <a href="checkout.php" class="option-btn <?= ($total_price > 1)?'':'disabled'; ?>">proceed to checkout</a>
+   <a href="shop.php" class="btn">continue shopping</a>
+   <!-- <a href="cart.php?delete_all" class="delete-btn <?= ($total_price > 1)?'':'disabled'; ?>" onclick="return confirm('delete all from cart?');">delete all item</a> -->
+   
 </div>
 
 </section>

@@ -46,7 +46,7 @@ if(!isset($admin_id)){
 		 ?>
 		<ul class="side-menu top">
 		<li class="active" >
-				<a href="dashboard.php">
+				<a href="dashboardd.php">
 				<i class='bx bxs-cog' ></i>
 				<span class="text">Home</span>
 				</a>
@@ -151,7 +151,7 @@ if(!isset($admin_id)){
 					
 					<span class="text">
 						<h3><?= $number_of_users; ?></h3>
-						<p>normal users</p>
+						<p>Number of users</p>
 					</span>
 				</li>
 				<!-- ______________________________ -->
@@ -219,7 +219,7 @@ if(!isset($admin_id)){
 								</td>
 								<td><?=$data['order_time'] ?></td>
 								<td><?=$data['total_quantity'] ?></td>
-								<td><?=$data['total_price'] ?></td>
+								<td>JD<?=$data['total_price'] ?></td>
 							</tr>
 							<?PHP }}?>
 							

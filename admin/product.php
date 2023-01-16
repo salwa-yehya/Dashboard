@@ -169,7 +169,7 @@ if(isset($_GET['delete'])){
 					<th >Description</th>
 					<th >Name</th>
 					<th >Price</th>
-					<th >discount</th>
+					<th >Discount</th>
 					<th >Add Sale</th>
 					<th >Remove Sale</th>
 					<th >Catecgory</th>

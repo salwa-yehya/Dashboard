@@ -123,7 +123,7 @@ $select_categorys = $conn->prepare("SELECT * FROM `category` WHERE category_id='
 
             <br><br>
             
-            <span>New price</span>
+            <span>Discount %</span>
             <input type="number" name="new_price" required class="box" placeholder="Enter Discount Percentage">
 
 			<br><br>

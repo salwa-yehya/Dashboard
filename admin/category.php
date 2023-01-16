@@ -65,7 +65,7 @@ if(isset($_GET['delete'])){
 				</a>
 			</li>
 			<li >
-				<a href="oreder.php">
+				<a href="order.php">
 				<i class='bx bxs-cog' ></i>
 					<span class="text">Orders</span>
 				</a>

@@ -23,20 +23,23 @@ if(isset($_POST['submit'])){
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- font awesome cdn link  -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-      <!-- Boxicons -->
-      <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-      <!-- My CSS -->
-      <link rel="stylesheet" href="style.css">
-    <title>login</title>
+    <link rel="icon" href="logo.png">
+    <title>Admin</title>
+    <script src="https://kit.fontawesome.com/73358cb070.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="Signup.css"> -->
+    <link rel="stylesheet" href="login.css">
+    <style>
+ 
+</style>
 </head>
+
 <body>
 <?php
    if(isset($message)){
@@ -50,28 +53,27 @@ if(isset($_POST['submit'])){
       }
    }
 ?>
-    <section class="add-products">
 
+    <!-- <a href="index.html"><img  id="logoLogin" src="logo.png" alt="logo"></a> -->
+
+<form action="" method="post" enctype="multipart/form-data" id="loginForm">
+
+        <h2>login Admin</h2>
+    <div class="qqq">
+        <input id="inputLoginText" name="name" type="text" placeholder="Your User Name">
+     <p id="p1"></p>   
+    </div>
     
-     
-        <form action="" method="post" enctype="multipart/form-data">
-           <div class="flex">
-              <div class="inputBox">
+    <div class="qqq">
+        <input id="inputLoginPassword" name="pass" type="password" placeholder="Enter password">
+    <p id="p2"></p>
+    </div>
+    
+    
+        <input  id="inputButtonLogin" name="submit" type="submit" value="login" >
+</form>
+    <!-- <script src="signup_in.js"></script> -->
+   
 
-                 <span>User Name</span>
-                 <input type="text" name="name" required placeholder="enter your username" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-                </div>
-              
-             <div class="inputBox">
-                 <span>Password</span>
-                 <input type="password" name="pass" required placeholder="enter your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-
-             </div>
-           </div>
-           <input type="submit" value="login now" class="add-btn" name="submit">
-
-        </form>
-     
-     </section>
 </body>
 </html>

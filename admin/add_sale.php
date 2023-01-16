@@ -122,7 +122,7 @@ $select_products = $conn->prepare("SELECT * FROM `products` WHERE product_id='$i
 			<input name="price" required class="box" value="JD<?= $old_prise; ?>">
 
 		<br><br>
-			<span>New price </span>
+			<span>Discount %</span>
 			 <input type="number" name="new_price" required class="box" placeholder="Enter Discount Percentage">
              
         
